@@ -1,0 +1,47 @@
+export function createProject(name) {
+  const _id = crypto.randomUUID();
+  let _projectName = name;
+  let _description = "";
+  let _totalTasks = 0;
+  let _todoList = [];
+
+  const incrementTotalTasks = () => _totalTasks++;
+  const decrementTotalTasks = () => _totalTasks--;
+
+  return {
+    get id() {
+      return _id;
+    },
+
+    get projectName() {
+      return _projectName;
+    },
+
+    get description() {
+      return _description;
+    },
+
+    get totalTasks() {
+      return _totalTasks;
+    },
+
+    get todoList() {
+      return _todoList;
+    },
+
+    set projectName(name) {
+      this._projectName = String(name);
+    },
+
+    set description(text) {
+      this._description = String(text);
+    },
+
+    set todoList(task) {
+      this._todoList.push(task);
+    },
+
+    incrementTotalTasks,
+    decrementTotalTasks,
+  };
+}
