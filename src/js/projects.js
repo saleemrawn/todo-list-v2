@@ -74,7 +74,6 @@ export function removeProject(id) {
   const index = projects.findIndex((project) => project.id === id);
   if (index !== -1) {
     projects.splice(index, 1);
-    decrementTotalTasks();
   }
 }
 
