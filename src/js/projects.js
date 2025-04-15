@@ -40,11 +40,11 @@ export function createProject(name) {
     },
 
     set projectName(name) {
-      this._projectName = String(name);
+      _projectName = String(name);
     },
 
     set description(text) {
-      this._description = String(text);
+      _description = String(text);
     },
 
     incrementTotalTasks,
