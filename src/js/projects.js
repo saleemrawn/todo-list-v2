@@ -1,3 +1,5 @@
+const projects = [];
+
 export function createProject(name) {
   const _id = crypto.randomUUID();
   let _projectName = name;
@@ -44,4 +46,16 @@ export function createProject(name) {
     incrementTotalTasks,
     decrementTotalTasks,
   };
+}
+
+export function addProject(project) {
+  if (typeof project !== "object") {
+    throw new Error(`Invalid argument: expected 'object', but received '${typeof project}'.`);
+  }
+
+  projects.push(project);
+}
+
+export function getProjects() {
+  return projects;
 }
