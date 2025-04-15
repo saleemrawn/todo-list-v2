@@ -61,6 +61,14 @@ export function addProject(project) {
   projects.push(project);
 }
 
+export function removeProject(id) {
+  const index = projects.findIndex((project) => project.id === id);
+  if (index !== -1) {
+    projects.splice(index, 1);
+    decrementTotalTasks();
+  }
+}
+
 export function getProjects() {
   return projects;
 }
