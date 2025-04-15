@@ -18,6 +18,14 @@ export function createProject(name) {
     incrementTotalTasks();
   };
 
+  const removeTask = (taskId) => {
+    const index = _todoList.findIndex((task) => task.id === taskId);
+    if (index !== -1) {
+      _todoList.splice(index, 1);
+      decrementTotalTasks();
+    }
+  };
+
   return {
     get id() {
       return _id;
@@ -50,6 +58,7 @@ export function createProject(name) {
     incrementTotalTasks,
     decrementTotalTasks,
     addTask,
+    removeTask,
   };
 }
 
