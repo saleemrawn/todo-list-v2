@@ -9,6 +9,14 @@ export function createProject(name) {
 
   const incrementTotalTasks = () => _totalTasks++;
   const decrementTotalTasks = () => _totalTasks--;
+  const addTask = (task = {}) => {
+    if (typeof task !== "object") {
+      throw new Error(`Invalid argument: expected type 'object', but received type '${typeof task}'.`);
+    }
+
+    _todoList.push(task);
+    incrementTotalTasks();
+  };
 
   return {
     get id() {
@@ -39,12 +47,9 @@ export function createProject(name) {
       this._description = String(text);
     },
 
-    set todoList(task) {
-      this._todoList.push(task);
-    },
-
     incrementTotalTasks,
     decrementTotalTasks,
+    addTask,
   };
 }
 
