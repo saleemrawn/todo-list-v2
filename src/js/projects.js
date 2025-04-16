@@ -1,82 +1,52 @@
-const projects = [];
+export default class Project {
+  #id;
+  #projectName;
+  #description;
+  #taskList;
 
-export function createProject(name) {
-  const _id = crypto.randomUUID();
-  let _projectName = name;
-  let _description = "";
-  let _totalTasks = 0;
-  let _todoList = [];
+  constructor(name) {
+    this.#id = crypto.randomUUID();
+    this.#projectName = name;
+    this.#description = "";
+    this.#taskList = [];
+  }
 
-  const incrementTotalTasks = () => _totalTasks++;
-  const decrementTotalTasks = () => _totalTasks--;
-  const addTask = (task = {}) => {
+  get id() {
+    return this.#id;
+  }
+
+  get projectName() {
+    return this.#projectName;
+  }
+
+  get description() {
+    return this.#description;
+  }
+
+  get taskList() {
+    return this.#taskList;
+  }
+
+  set projectName(name) {
+    this.#projectName = String(name);
+  }
+
+  set description(text) {
+    this.#description = String(text);
+  }
+
+  addTask(task = {}) {
     if (typeof task !== "object") {
       throw new Error(`Invalid argument: expected type 'object', but received type '${typeof task}'.`);
     }
 
-    _todoList.push(task);
-    incrementTotalTasks();
-  };
+    this.#taskList.push(task);
+  }
 
-  const removeTask = (taskId) => {
-    const index = _todoList.findIndex((task) => task.id === taskId);
+  removeTask(taskId) {
+    const index = this.#taskList.findIndex((task) => task.id === taskId);
     if (index !== -1) {
-      _todoList.splice(index, 1);
-      decrementTotalTasks();
+      this.#taskList.splice(index, 1);
     }
-  };
-
-  return {
-    get id() {
-      return _id;
-    },
-
-    get projectName() {
-      return _projectName;
-    },
-
-    get description() {
-      return _description;
-    },
-
-    get totalTasks() {
-      return _totalTasks;
-    },
-
-    get todoList() {
-      return _todoList;
-    },
-
-    set projectName(name) {
-      _projectName = String(name);
-    },
-
-    set description(text) {
-      _description = String(text);
-    },
-
-    incrementTotalTasks,
-    decrementTotalTasks,
-    addTask,
-    removeTask,
-  };
-}
-
-export function addProject(project) {
-  if (typeof project !== "object") {
-    throw new Error(`Invalid argument: expected 'object', but received '${typeof project}'.`);
   }
-
-  projects.push(project);
-}
-
-export function removeProject(id) {
-  const index = projects.findIndex((project) => project.id === id);
-  if (index !== -1) {
-    projects.splice(index, 1);
-  }
-}
-
-export function getProjects() {
-  return projects;
 }
