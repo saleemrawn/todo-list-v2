@@ -4,10 +4,10 @@ export default class Project {
   #description;
   #taskList;
 
-  constructor(name) {
+  constructor({ name, description = "" }) {
     this.#id = crypto.randomUUID();
     this.#projectName = name;
-    this.#description = "";
+    this.#description = description;
     this.#taskList = [];
   }
 
