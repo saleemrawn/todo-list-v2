@@ -1,5 +1,6 @@
 export default class Task {
   #id;
+  #dateCreated;
   #name;
   #description;
   #dueDate;
@@ -8,6 +9,7 @@ export default class Task {
 
   constructor({ name, description = "", dueDate = "", priority = 0, notes = "" }) {
     this.#id = crypto.randomUUID();
+    this.#dateCreated = Date.now();
     this.#name = name;
     this.#description = description;
     this.#dueDate = dueDate;
@@ -16,6 +18,7 @@ export default class Task {
     this.toJSON = function () {
       return {
         id: this.#id,
+        dateCreated: this.#dateCreated,
         name: this.#name,
         description: this.#description,
         dueDate: this.#dueDate,
@@ -27,6 +30,10 @@ export default class Task {
 
   get id() {
     return this.#id;
+  }
+
+  get dateCreated() {
+    return this.#dateCreated;
   }
 
   get name() {
