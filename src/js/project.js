@@ -1,17 +1,20 @@
 export default class Project {
   #id;
+  #dateCreated;
   #projectName;
   #description;
   #taskList;
 
   constructor({ name, description = "" }) {
     this.#id = crypto.randomUUID();
+    this.#dateCreated = Date.now();
     this.#projectName = name;
     this.#description = description;
     this.#taskList = [];
     this.toJSON = function () {
       return {
         id: this.#id,
+        dateCreated: this.#dateCreated,
         name: this.#projectName,
         description: this.#description,
         taskList: this.#taskList,
@@ -21,6 +24,10 @@ export default class Project {
 
   get id() {
     return this.#id;
+  }
+
+  get dateCreated() {
+    return this.#dateCreated;
   }
 
   get projectName() {
