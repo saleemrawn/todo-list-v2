@@ -10,7 +10,12 @@ export default class Project {
     this.#description = description;
     this.#taskList = [];
     this.toJSON = function () {
-      return { id: this.#id, name: this.#projectName, description: this.#description, taskList: this.#taskList };
+      return {
+        id: this.#id,
+        name: this.#projectName,
+        description: this.#description,
+        taskList: this.#taskList,
+      };
     };
   }
 
