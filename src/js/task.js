@@ -13,6 +13,16 @@ export default class Task {
     this.#dueDate = dueDate;
     this.#priority = priority;
     this.#notes = notes;
+    this.toJSON = function () {
+      return {
+        id: this.#id,
+        name: this.#name,
+        description: this.#description,
+        dueDate: this.#dueDate,
+        priority: this.#priority,
+        notes: this.#notes,
+      };
+    };
   }
 
   get id() {
