@@ -31,21 +31,21 @@
 
   --button-default-background-colour: var(--ziggurat-200);
   --button-default-text-colour: var(--ziggurat-950);
-  --button-default-hover-colour: var(--ziggurat-300);
+  --button-default-hover-background-colour: var(--ziggurat-300);
   --button-default-active-background-colour: var(--ziggurat-400);
   --button-default-disabled-background-colour: var(--ziggurat-100);
   --button-default-disabled-text-colour: var(--ziggurat-400);
 
   --button-primary-background-colour: var(--ziggurat-500);
   --button-primary-text-colour: var(--ziggurat-50);
-  --button-primary-hover-colour: var(--ziggurat-600);
+  --button-primary-hover-background-colour: var(--ziggurat-600);
   --button-primary-active-background-colour: var(--ziggurat-700);
   --button-primary-disabled-background-colour: var(--ziggurat-100);
   --button-primary-disabled-text-colour: var(--ziggurat-400);
 
   --button-secondary-background-colour: transparent;
-  --button-secondary-text-colour: var(--ziggurat-50);
-  --button-secondary-hover-colour: var(--ziggurat-200);
+  --button-secondary-text-colour: var(--ziggurat-950);
+  --button-secondary-hover-background-colour: var(--ziggurat-200);
   --button-secondary-active-background-colour: var(--ziggurat-500);
   --button-secondary-disabled-background-colour: var(--ziggurat-100);
   --button-secondary-disabled-text-colour: var(--ziggurat-400);
