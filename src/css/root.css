@@ -1,0 +1,58 @@
+:root {
+  --ziggurat-50: #f5f9fa;
+  --ziggurat-100: #ebf2f3;
+  --ziggurat-200: #c5dbde;
+  --ziggurat-300: #aacbcf;
+  --ziggurat-400: #7cb0b4;
+  --ziggurat-500: #5c969b;
+  --ziggurat-600: #487b81;
+  --ziggurat-700: #3b6369;
+  --ziggurat-800: #345458;
+  --ziggurat-900: #2f474b;
+  --ziggurat-950: #1f2e32;
+  --zinc-50: #fafafa;
+  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d8;
+  --zinc-400: #a1a1aa;
+  --zinc-500: #71717a;
+  --zinc-600: #52525b;
+  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;
+  --zinc-900: #1a1a1e;
+  --zinc-900: #18181b;
+  --zinc-950: #09090b;
+  --zinc-950: #0e0e11;
+
+  --text-font-family: "Nunito", Helvetica, Arial, sans-serif, system-ui;
+  --text-colour: var(--ziggurat-950);
+  --text-muted-colour: var(--zinc-500);
+  --text-bold: 600;
+
+  --button-default-background-colour: var(--ziggurat-200);
+  --button-default-text-colour: var(--ziggurat-950);
+  --button-default-hover-colour: var(--ziggurat-300);
+  --button-default-active-background-colour: var(--ziggurat-400);
+  --button-default-disabled-background-colour: var(--ziggurat-100);
+  --button-default-disabled-text-colour: var(--ziggurat-400);
+
+  --button-primary-background-colour: var(--ziggurat-500);
+  --button-primary-text-colour: var(--ziggurat-50);
+  --button-primary-hover-colour: var(--ziggurat-600);
+  --button-primary-active-background-colour: var(--ziggurat-700);
+  --button-primary-disabled-background-colour: var(--ziggurat-100);
+  --button-primary-disabled-text-colour: var(--ziggurat-400);
+
+  --button-secondary-background-colour: transparent;
+  --button-secondary-text-colour: var(--ziggurat-50);
+  --button-secondary-hover-colour: var(--ziggurat-200);
+  --button-secondary-active-background-colour: var(--ziggurat-500);
+  --button-secondary-disabled-background-colour: var(--ziggurat-100);
+  --button-secondary-disabled-text-colour: var(--ziggurat-400);
+
+  --border-colour: var(--zinc-300);
+  --subtle-border-colour: var(--zinc-200);
+
+  --container-background: 0 0 0 1px var(--subtle-border-colour), 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
