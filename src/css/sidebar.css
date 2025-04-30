@@ -1,0 +1,41 @@
+.sidebar-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 16px;
+  background-color: var(--ziggurat-50);
+  padding: 24px;
+}
+
+.sidebar-container button {
+  width: 100%;
+  text-align: left;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+.logo {
+  color: #4dd3d7;
+}
+
+.logo-to {
+  color: #fea575;
+}
+
+.logo-do {
+  color: #ffc172;
+}
+
+.app-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.my-projects-title {
+  font-weight: 900;
+}
