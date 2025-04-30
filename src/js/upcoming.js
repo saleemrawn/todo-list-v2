@@ -9,7 +9,7 @@ export default function loadUpcoming() {
 
   resetContentContainer();
   setPageType("upcoming");
-  addPageTitleToDOM("Upcoming");
+  addPageTitleToDOM("upcoming");
   updateSelectedPage();
 
   for (const project of projects) {

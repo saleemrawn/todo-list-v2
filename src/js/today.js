@@ -9,7 +9,7 @@ export default function loadToday() {
 
   resetContentContainer();
   setPageType("today");
-  addPageTitleToDOM("Today");
+  addPageTitleToDOM("today");
   updateSelectedPage();
 
   for (const project of projects) {
