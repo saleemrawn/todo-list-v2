@@ -56,6 +56,10 @@
   --border-colour: var(--zinc-300);
   --subtle-border-colour: var(--zinc-200);
 
+  --border-radius-24: 24px;
+  --border-radius-40: 40px;
+  --border-radius-100: 100px;
+
   --container-background: 0 0 0 1px var(--subtle-border-colour), 0 10px 15px -3px rgba(0, 0, 0, 0.05),
     0 4px 6px -4px rgba(0, 0, 0, 0.05);
 }
