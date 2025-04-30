@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+html {
+  font-size: 14px;
+}
+
+body {
+  display: grid;
+  gap: 40px;
+  grid-template-rows: 100vh;
+  grid-template-columns: 200px 1fr;
+  margin: 0;
+  background-color: #ebf2f3;
+  font-family: var(--text-font-family);
+}
+
+main {
+  padding: 24px 0;
+}
+
+#content {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: minmax(750px, 960px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 8px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
