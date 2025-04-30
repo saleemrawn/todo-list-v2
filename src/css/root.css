@@ -27,7 +27,10 @@
   --text-font-family: "Nunito", Helvetica, Arial, sans-serif, system-ui;
   --text-colour: var(--ziggurat-950);
   --text-muted-colour: var(--zinc-500);
-  --text-bold: 600;
+
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
 
   --button-default-background-colour: var(--ziggurat-200);
   --button-default-text-colour: var(--ziggurat-950);
