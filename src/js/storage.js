@@ -21,3 +21,7 @@ export function loadProjectsFromStorage() {
     projectsCollection.addProject(JSON.parse(project));
   });
 }
+
+export function clearStorage() {
+  localStorage.clear();
+}
