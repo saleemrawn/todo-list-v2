@@ -1,0 +1,41 @@
+.task-card {
+  box-shadow: var(--container-background);
+  display: grid;
+  align-items: center;
+  gap: 16px;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 8px;
+  padding: 24px;
+  background-color: var(--ziggurat-50);
+  border-radius: 24px;
+}
+
+.task-card p {
+  margin: 0;
+}
+
+.task-card-project-pill,
+.task-card-priority-pill {
+  padding: 2px 12px;
+  background-color: var(--ziggurat-200);
+  border-radius: 100px;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+.task-card-action-buttons {
+  justify-self: end;
+}
+
+.low-priority {
+  background-color: var(--low-priority-colour);
+}
+
+.med-priority {
+  background-color: var(--med-priority-colour);
+}
+
+.high-priority {
+  background-color: var(--high-priority-colour);
+}
