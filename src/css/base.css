@@ -22,7 +22,7 @@ main {
   display: grid;
   justify-content: center;
   grid-template-rows: 1fr;
-  grid-template-columns: minmax(750px, 960px);
+  grid-template-columns: 1fr;
 }
 
 h1,
