@@ -1,3 +1,5 @@
+import Project from "./project.js";
+
 export const projectsCollection = (function () {
   const _projects = [];
 
@@ -31,3 +33,10 @@ export const projectsCollection = (function () {
     getProjectsCount,
   };
 })();
+
+export function setProjectObjPrototype() {
+  const projects = projectsCollection.getProjects();
+  projects.forEach((project) => {
+    Object.setPrototypeOf(project, Project.prototype);
+  });
+}
