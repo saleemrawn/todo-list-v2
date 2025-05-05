@@ -3,7 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/5a35841989.js" crossorigin="anonymous"></script>
     <title>Todo App</title>
   </head>
-  <body></body>
+  <body>
+    <div class="sidebar-container">
+      <div class="logo">
+        <h1><span class="logo-to">to</span><span class="logo-do">do</span>App</h1>
+      </div>
+      <div class="app-buttons">
+        <button class="add-task-button secondary"><i class="fa-solid fa-circle-plus"></i>Add task</button>
+        <button class="today-button secondary"><i class="fa-solid fa-calendar-days"></i>Today</button>
+        <button class="upcoming-button secondary"><i class="fa-solid fa-calendar-days"></i>Upcoming</button>
+      </div>
+      <div class="my-projects-container">
+        <p class="my-projects-title">My projects</p>
+        <button class="new-project-button secondary"><i class="fa-solid fa-circle-plus"></i>New project</button>
+        <div class="my-project-links"></div>
+      </div>
+    </div>
+
+    <main>
+      <div id="content"></div>
+    </main>
+
+    <footer></footer>
+
+    <dialog class="new-project-dialog">
+      <form class="new-project-form">
+        <div class="new-project-name-container">
+          <label for="new-project-name">Project name</label>
+          <input type="text" id="new-project-name" name="new-project-name" />
+        </div>
+        <div class="new-project-description-container">
+          <label for="new-project-description">Description</label>
+          <input type="text" id="new-project-description" name="new-project-description" />
+        </div>
+        <div class="dialog-buttons-container">
+          <button type="button" class="new-project-cancel-button" formmethod="dialog">Cancel</button>
+          <button type="submit" class="save-button">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="add-task-dialog">
+      <form id="add-task-form" class="add-task-form">
+        <div class="task-name-container">
+          <label for="task-name">Task name</label>
+          <input type="text" id="task-name" name="task-name" />
+        </div>
+        <div class="task-description-container">
+          <label for="task-description">Description</label>
+          <input type="text" id="task-description" name="task-description" />
+        </div>
+        <div class="task-due-date-container">
+          <label for="task-due-date">Due Date</label>
+          <input type="date" id="task-due-date" name="task-due-date" />
+        </div>
+        <div class="task-priority-container">
+          <label for="task-priority">Priority</label>
+          <select name="task-priority" id="task-priority">
+            <option value="0">Low</option>
+            <option value="1">Medium</option>
+            <option value="2">High</option>
+          </select>
+        </div>
+        <div class="task-project-container">
+          <label for="task-project">Project</label>
+          <select name="task-project" id="task-project"></select>
+        </div>
+        <div class="task-notes-container">
+          <label for="task-notes">Notes</label>
+          <input type="text" id="task-notes" name="task-notes" />
+        </div>
+        <div class="dialog-buttons-container">
+          <button type="button" class="task-cancel-button" formmethod="dialog">Cancel</button>
+          <button type="submit" class="save-button">Save</button>
+        </div>
+        <input type="hidden" id="taskID" class="taskID" name="taskID" />
+      </form>
+    </dialog>
+  </body>
 </html>
