@@ -2,9 +2,15 @@ import Project from "./project.js";
 import Task from "./task.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
-import { projectsCollection } from "./projectsCollection.js";
+import { projectsCollection, setProjectObjPrototype } from "./projectsCollection.js";
 import { addTaskToDOM, closeDialog, loadProjectsToDropdown, reloadPage, resetAddTaskForm } from "./domController.js";
-import { addAllProjectsToStorage, addProjectToStorage, clearStorage, deleteProjectFromStorage } from "./storage.js";
+import {
+  addAllProjectsToStorage,
+  addProjectToStorage,
+  loadProjectsFromStorage,
+  clearStorage,
+  deleteProjectFromStorage,
+} from "./storage.js";
 import { addTaskToProject } from "./projectTaskConnector.js";
 import { findParentElement } from "./helpers.js";
 
@@ -19,6 +25,15 @@ export function loadEventListeners() {
   addGlobalEventListener("click", ".task-cancel-button", handleCancelAddTaskEvent);
   addGlobalEventListener("click", ".task-delete-button", handleDeleteTaskEvent);
   addGlobalEventListener("submit", ".add-task-form", handleAddTaskSubmitEvent);
+}
+
+export function loadApp() {
+  window.addEventListener("DOMContentLoaded", () => {
+    loadProjectsFromStorage();
+    setProjectObjPrototype();
+    loadToday();
+    loadEventListeners();
+  });
 }
 
 function addGlobalEventListener(type, selector, callback, parent = document) {
