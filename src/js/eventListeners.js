@@ -24,8 +24,14 @@ import { addTaskToProject } from "./projectTaskConnector.js";
 import { findParentElement } from "./helpers.js";
 
 export function loadEventListeners() {
-  addGlobalEventListener("click", ".today-button", loadToday);
-  addGlobalEventListener("click", ".upcoming-button", loadUpcoming);
+  addGlobalEventListener("click", ".today-button", (button) => {
+    loadToday();
+    updateSelectedPage(button);
+  });
+  addGlobalEventListener("click", ".upcoming-button", (button) => {
+    loadUpcoming();
+    updateSelectedPage(button);
+  });
   addGlobalEventListener("click", ".new-project-button", handleNewProjectDialogEvent);
   addGlobalEventListener("click", ".new-project-cancel-button", handleCancelNewProjectEvent);
   addGlobalEventListener("submit", ".new-project-form", handleNewProjectSubmitEvent);
