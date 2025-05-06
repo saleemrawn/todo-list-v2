@@ -1,7 +1,6 @@
 import { lightFormat } from "date-fns";
 import { projectsCollection } from "./projectsCollection.js";
 import { addPageTitleToDOM, addTaskToDOM, resetContentContainer, setPageType } from "./domController.js";
-import { updateSelectedPage } from "./domController.js";
 
 export default function loadToday() {
   const projects = projectsCollection.getProjects();
@@ -10,7 +9,6 @@ export default function loadToday() {
   resetContentContainer();
   setPageType("today");
   addPageTitleToDOM("today");
-  updateSelectedPage();
 
   for (const project of projects) {
     for (const task of project.taskList) {
