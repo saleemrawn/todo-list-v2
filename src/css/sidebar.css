@@ -1,8 +1,7 @@
 .sidebar-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr;
-  gap: 16px;
+  grid-template-rows: auto auto auto 1fr;
   background-color: var(--ziggurat-50);
   padding: 24px;
 }
@@ -20,6 +19,7 @@
 
 .logo {
   color: #4dd3d7;
+  margin-bottom: 24px;
 }
 
 .logo-to {
@@ -30,12 +30,25 @@
   color: #ffc172;
 }
 
-.app-buttons {
+.add-task-container {
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--ziggurat-300);
+}
+
+.timeline-controls-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 24px;
 }
 
 .my-projects-title {
   font-weight: 900;
+}
+
+.my-project-buttons {
+  padding-top: 4px;
+  margin-top: 4px;
+  border-top: 1px solid var(--ziggurat-300);
 }
