@@ -1,0 +1,21 @@
+.page-title-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.project-action-buttons {
+  justify-self: end;
+}
+
+.project-action-buttons button {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  text-align: center;
+}
+
+.project-action-buttons i {
+  font-size: 16px;
+  margin: 0;
+}
