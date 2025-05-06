@@ -35,6 +35,19 @@ export function addPageTitleToDOM(title) {
   content.insertAdjacentHTML("beforeend", `<h2>${title}</h2>`);
 }
 
+export function addProjectButtonsToDOM(container) {
+  const projects = projectsCollection.getProjects();
+
+  projects.forEach((project) => {
+    container.insertAdjacentHTML(
+      "beforeend",
+      `
+      <button class="project-button secondary" data-project-id="${project.id}">${project.projectName}</button>
+      `
+    );
+  });
+}
+
 export function resetContentContainer() {
   const content = document.querySelector("#content");
   content.innerHTML = "";
