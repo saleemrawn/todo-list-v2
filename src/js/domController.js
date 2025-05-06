@@ -42,6 +42,19 @@ export function addPageTitleToDOM(title) {
   );
 }
 
+export function addProjectActionButtonsToDOM() {
+  const container = document.querySelector(".page-title-container");
+  container.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="project-action-buttons">
+        <button class="edit-project secondary" title="Edit Project"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="delete-project secondary" title="Delete Project"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+    `
+  );
+}
+
 export function addProjectButtonsToDOM(container) {
   const projects = projectsCollection.getProjects();
 
