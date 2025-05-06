@@ -32,7 +32,14 @@ export function addTaskToDOM(project, task) {
 
 export function addPageTitleToDOM(title) {
   const content = document.querySelector("#content");
-  content.insertAdjacentHTML("beforeend", `<h2>${title}</h2>`);
+  content.insertAdjacentHTML(
+    "beforeend",
+    `
+    <div class="page-title-container">
+      <h2>${title}</h2>
+    </div>
+    `
+  );
 }
 
 export function addProjectButtonsToDOM(container) {
