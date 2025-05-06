@@ -63,22 +63,11 @@ export function setPageType(type) {
   content.setAttribute("data-page", `${type}`);
 }
 
-export function updateSelectedPage() {
-  const content = document.querySelector("#content");
-  const todayButton = document.querySelector(".today-button");
-  const upcomingButton = document.querySelector(".upcoming-button");
+export function updateSelectedPage(button) {
+  const appButtons = document.querySelectorAll(".app-buttons button");
 
-  if (content.getAttribute("data-page") === "today") {
-    todayButton.classList.add("selected");
-    upcomingButton.classList.remove("selected");
-    return;
-  }
-
-  if (content.getAttribute("data-page") === "upcoming") {
-    todayButton.classList.remove("selected");
-    upcomingButton.classList.add("selected");
-    return;
-  }
+  appButtons.forEach((button) => button.classList.remove("selected"));
+  button?.target.classList.add("selected");
 }
 
 export function resetAddTaskForm() {
