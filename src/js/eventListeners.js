@@ -3,7 +3,14 @@ import Task from "./task.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
 import { projectsCollection, setProjectObjPrototype } from "./projectsCollection.js";
-import { addTaskToDOM, closeDialog, loadProjectsToDropdown, reloadPage, resetAddTaskForm } from "./domController.js";
+import {
+  addProjectButtonsToDOM,
+  addTaskToDOM,
+  closeDialog,
+  loadProjectsToDropdown,
+  reloadPage,
+  resetAddTaskForm,
+} from "./domController.js";
 import {
   addAllProjectsToStorage,
   addProjectToStorage,
@@ -32,6 +39,7 @@ export function loadApp() {
     loadProjectsFromStorage();
     setProjectObjPrototype();
     loadToday();
+    loadProjectSidebarButtons();
     loadEventListeners();
   });
 }
@@ -165,6 +173,8 @@ function handleNewProjectSubmitEvent(event) {
 
   form.reset();
   dialog.close();
+
+  loadProjectSidebarButtons();
 }
 
 function handleNewTask(project, form) {
@@ -210,6 +220,12 @@ function updateTaskToNewProject(project, task, form) {
   resetAddTaskForm();
   closeDialog(".add-task-dialog");
   reloadPage();
+}
+
+function loadProjectSidebarButtons() {
+  const container = document.querySelector(".my-project-buttons");
+  container.innerHTML = "";
+  addProjectButtonsToDOM(container);
 }
 
 function getSourceFormObj(form) {
