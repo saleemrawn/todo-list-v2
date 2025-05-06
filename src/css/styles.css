@@ -1,5 +1,6 @@
 @import url(root.css);
 @import url(base.css);
 @import url(sidebar.css);
+@import url(project.css);
 @import url(./components/button.css);
 @import url(./components/task-card.css);
