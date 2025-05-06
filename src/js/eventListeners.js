@@ -2,6 +2,7 @@ import Project from "./project.js";
 import Task from "./task.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
+import loadProject from "./projectTemplate.js";
 import { projectsCollection, setProjectObjPrototype } from "./projectsCollection.js";
 import {
   addProjectButtonsToDOM,
@@ -10,6 +11,7 @@ import {
   loadProjectsToDropdown,
   reloadPage,
   resetAddTaskForm,
+  updateSelectedPage,
 } from "./domController.js";
 import {
   addAllProjectsToStorage,
@@ -32,6 +34,7 @@ export function loadEventListeners() {
   addGlobalEventListener("click", ".task-cancel-button", handleCancelAddTaskEvent);
   addGlobalEventListener("click", ".task-delete-button", handleDeleteTaskEvent);
   addGlobalEventListener("submit", ".add-task-form", handleAddTaskSubmitEvent);
+  addGlobalEventListener("click", ".project-button", handleProjectSidebarButton);
 }
 
 export function loadApp() {
@@ -194,6 +197,12 @@ function handleNewTask(project, form) {
   resetAddTaskForm();
   closeDialog(".add-task-dialog");
   reloadPage();
+}
+
+function handleProjectSidebarButton(event) {
+  const id = event.target.getAttribute("data-project-id");
+  loadProject(id);
+  updateSelectedPage(event);
 }
 
 function updateTaskToCurrentProject(task, form) {
