@@ -11,6 +11,7 @@ import {
   loadProjectsToDropdown,
   reloadPage,
   resetAddTaskForm,
+  setProjectSelectedPage,
   updateSelectedPage,
 } from "./domController.js";
 import {
@@ -183,6 +184,7 @@ function handleNewProjectSubmitEvent(event) {
     updateExistingProject(formData);
     loadProjectSidebarButtons();
     loadProject(formData.get("projectID"));
+    setProjectSelectedPage(formData.get("projectID"));
     form.reset();
     dialog.close();
     return;
