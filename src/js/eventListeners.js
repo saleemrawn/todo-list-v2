@@ -174,9 +174,19 @@ function handleNewProjectSubmitEvent(event) {
   const dialog = document.querySelector(".new-project-dialog");
   const formData = new FormData(form);
   const project = new Project({
+    id: formData.get("projectID"),
     name: formData.get("new-project-name"),
     description: formData.get("new-project-description"),
   });
+
+  if (project.id !== "") {
+    updateExistingProject(formData);
+    loadProjectSidebarButtons();
+    loadProject(formData.get("projectID"));
+    form.reset();
+    dialog.close();
+    return;
+  }
 
   projectsCollection.addProject(project);
   addProjectToStorage(project.id, project);
