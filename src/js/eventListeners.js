@@ -43,6 +43,7 @@ export function loadEventListeners() {
   addGlobalEventListener("submit", ".add-task-form", handleAddTaskSubmitEvent);
   addGlobalEventListener("click", ".project-button", handleProjectSidebarButton);
   addGlobalEventListener("click", ".edit-project", handleEditProjectEvent);
+  addGlobalEventListener("click", ".delete-project", handleDeleteProjectEvent);
 }
 
 export function loadApp() {
@@ -217,6 +218,15 @@ function handleEditProjectEvent() {
       form.elements["projectID"].value = project.id;
     }
   });
+}
+
+function handleDeleteProjectEvent() {
+  const projectID = document.querySelector("#content").getAttribute("data-project-id");
+
+  if (confirm("Are you sure you want to delete the project?\rWARNING: You will lose all tasks saved to the project.")) {
+    deleteProjectFromStorage(projectID);
+    window.location.reload();
+  }
 }
 
 function handleNewTask(project, form) {
