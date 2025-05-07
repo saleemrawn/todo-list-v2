@@ -71,3 +71,15 @@ button.selected {
 button i {
   margin-right: 6px;
 }
+
+.edit-project::before {
+  content: "\f044";
+  font-family: "Font Awesome 6 Free";
+  font-size: 16px;
+}
+
+.delete-project::before {
+  content: "\f2ed";
+  font-family: "Font Awesome 6 Free";
+  font-size: 16px;
+}

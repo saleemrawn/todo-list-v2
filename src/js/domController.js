@@ -49,8 +49,8 @@ export function addProjectActionButtonsToDOM() {
     "beforeend",
     `
       <div class="project-action-buttons">
-        <button class="edit-project secondary" title="Edit Project"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="delete-project secondary" title="Delete Project"><i class="fa-solid fa-trash-can"></i></button>
+        <button class="edit-project secondary" title="Edit Project"></button>
+        <button class="delete-project secondary" title="Delete Project"></button>
       </div>
     `
   );
