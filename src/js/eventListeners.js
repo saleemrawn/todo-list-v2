@@ -41,6 +41,7 @@ export function loadEventListeners() {
   addGlobalEventListener("click", ".task-delete-button", handleDeleteTaskEvent);
   addGlobalEventListener("submit", ".add-task-form", handleAddTaskSubmitEvent);
   addGlobalEventListener("click", ".project-button", handleProjectSidebarButton);
+  addGlobalEventListener("click", ".edit-project", handleEditProjectEvent);
 }
 
 export function loadApp() {
@@ -186,6 +187,26 @@ function handleNewProjectSubmitEvent(event) {
   loadProjectSidebarButtons();
 }
 
+function handleEditProjectEvent() {
+  const dialog = document.querySelector(".new-project-dialog");
+  const form = document.querySelector(".new-project-form");
+
+  form.reset();
+  dialog.showModal();
+
+  const projects = projectsCollection.getProjects();
+  const parent = document.querySelector("#content");
+  const projectID = parent.getAttribute("data-project-id");
+
+  projects.forEach((project) => {
+    if (project.id === projectID) {
+      form.elements["new-project-name"].value = project.projectName;
+      form.elements["new-project-description"].value = project.description;
+      form.elements["projectID"].value = project.id;
+    }
+  });
+}
+
 function handleNewTask(project, form) {
   const task = new Task({
     name: form.get("task-name"),
@@ -241,6 +262,20 @@ function loadProjectSidebarButtons() {
   const container = document.querySelector(".my-project-buttons");
   container.innerHTML = "";
   addProjectButtonsToDOM(container);
+}
+
+function updateExistingProject(formData) {
+  const projects = projectsCollection.getProjects();
+
+  for (const project of projects) {
+    if (formData.get("projectID") === project.id) {
+      project.projectName = formData.get("new-project-name");
+      project.description = formData.get("new-project-description");
+    }
+  }
+
+  clearStorage();
+  addAllProjectsToStorage();
 }
 
 function getSourceFormObj(form) {
