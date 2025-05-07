@@ -110,6 +110,11 @@ export function updateSelectedPage(button) {
   button?.target.classList.add("selected");
 }
 
+export function setProjectSelectedPage(projectID) {
+  const button = document.querySelector(`button[data-project-id="${projectID}"]`);
+  button.classList.add("selected");
+}
+
 export function resetAddTaskForm() {
   const form = document.querySelector(".add-task-form");
 
