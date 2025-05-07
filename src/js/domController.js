@@ -2,6 +2,7 @@ import { lightFormat } from "date-fns";
 import { projectsCollection } from "./projectsCollection.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
+import loadProject from "./projectTemplate.js";
 
 export function addTaskToDOM(project, task) {
   const content = document.querySelector("#content");
@@ -84,11 +85,12 @@ export function loadProjectsToDropdown() {
   }
 }
 
-export function reloadPage() {
+export function reloadPage(projectID) {
   const content = document.querySelector("#content");
 
   if (content.getAttribute("data-page") === "today") loadToday();
   if (content.getAttribute("data-page") === "upcoming") loadUpcoming();
+  if (content.getAttribute("data-page") === "project") loadProject(projectID);
 }
 
 export function setPageType(type) {
