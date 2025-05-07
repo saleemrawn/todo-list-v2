@@ -11,6 +11,7 @@ import {
   loadProjectsToDropdown,
   reloadPage,
   resetAddTaskForm,
+  resetProjectForm,
   setProjectSelectedPage,
   updateSelectedPage,
 } from "./domController.js";
@@ -155,17 +156,15 @@ function handleAddTaskSubmitEvent(event) {
 
 function handleNewProjectDialogEvent() {
   const dialog = document.querySelector(".new-project-dialog");
-  const form = document.querySelector(".new-project-form");
 
-  form.reset();
+  resetProjectForm();
   dialog.showModal();
 }
 
 function handleCancelNewProjectEvent() {
   const dialog = document.querySelector(".new-project-dialog");
-  const form = document.querySelector(".new-project-form");
 
-  form.reset();
+  resetProjectForm();
   dialog.close();
 }
 
@@ -181,30 +180,28 @@ function handleNewProjectSubmitEvent(event) {
     description: formData.get("new-project-description"),
   });
 
-  if (project.id !== "") {
+  if (formData.get("projectID") !== "") {
     updateExistingProject(formData);
     loadProjectSidebarButtons();
     loadProject(formData.get("projectID"));
     setProjectSelectedPage(formData.get("projectID"));
-    form.reset();
+    resetProjectForm();
     dialog.close();
     return;
   }
 
   projectsCollection.addProject(project);
   addProjectToStorage(project.id, project);
-
-  form.reset();
-  dialog.close();
-
+  resetProjectForm();
   loadProjectSidebarButtons();
+  dialog.close();
 }
 
 function handleEditProjectEvent() {
   const dialog = document.querySelector(".new-project-dialog");
   const form = document.querySelector(".new-project-form");
 
-  form.reset();
+  resetProjectForm();
   dialog.showModal();
 
   const projects = projectsCollection.getProjects();

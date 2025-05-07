@@ -123,6 +123,13 @@ export function resetAddTaskForm() {
   form.elements["task-due-date"].value = lightFormat(new Date(), "yyyy-MM-dd");
 }
 
+export function resetProjectForm() {
+  const form = document.querySelector(".new-project-form");
+
+  form.reset();
+  form.elements["projectID"].value = "";
+}
+
 export function closeDialog(selector) {
   const dialog = document.querySelector(selector);
   dialog?.close();
