@@ -98,6 +98,11 @@ export function setPageType(type) {
   content.setAttribute("data-page", `${type}`);
 }
 
+export function setProjectID(selector, id) {
+  const container = document.querySelector(selector);
+  container.setAttribute("data-project-id", `${id}`);
+}
+
 export function updateSelectedPage(button) {
   const appButtons = document.querySelectorAll(".app-buttons button");
 
