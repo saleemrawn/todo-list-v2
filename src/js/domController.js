@@ -11,18 +11,15 @@ export function addTaskToDOM(project, task) {
     "beforeend",
     `
       <div class="task-card" data-task-id="${task.taskID}" data-project-id="${project.id}">
-        <p class="task-card-name">${task.name}</p>
-        <!-- <p class="task-card-description">${task.description}</p> -->
-        <p class="task-card-date">${lightFormat(task.dueDate, "dd/MM/yyyy")}</p>
-        <div class="task-card-project-pill">
-          <p class="task-card-project">${project.projectName}</p>
-        </div>
-        <div class="task-card-priority-pill" data-priority="${task.priority}">
-          <p class="task-card-priority">${getPriorityName(task.priority)}</p>
-        </div>
-        <div class="task-card-action-buttons">
-          <button class="task-edit-button">Edit</button>
-          <button class="task-delete-button">Delete</button>
+        <div class="task-card-details">
+            <div class="task-card-name-date-container">
+              <p class="task-card-name">${task.name}</p>
+              <p class="task-card-date">${lightFormat(task.dueDate, "dd/MM/yyyy")}</p>
+            </div>
+            <div class="task-card-priority-pill" data-priority="${task.priority}">
+              <p class="task-card-priority">${getPriorityName(task.priority)}</p>
+            </div>
+            <button class="task-edit-button">Edit</button>
         </div>
       </div>
     `
