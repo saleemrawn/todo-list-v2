@@ -8,6 +8,8 @@ import {
   addProjectButtonsToDOM,
   addTaskToDOM,
   closeDialog,
+  collapseTaskCard,
+  expandTaskCard,
   loadProjectsToDropdown,
   reloadPage,
   resetAddTaskForm,
@@ -45,6 +47,9 @@ export function loadEventListeners() {
   addGlobalEventListener("click", ".project-button", handleProjectSidebarButton);
   addGlobalEventListener("click", ".edit-project", handleEditProjectEvent);
   addGlobalEventListener("click", ".delete-project", handleDeleteProjectEvent);
+  addGlobalEventListener("click", ".task-card", (card) => {
+    handleCollapsibleTaskCardEvent(card);
+  });
 }
 
 export function loadApp() {
@@ -249,6 +254,17 @@ function handleProjectSidebarButton(event) {
   const id = event.target.getAttribute("data-project-id");
   loadProject(id);
   updateSelectedPage(event);
+}
+
+function handleCollapsibleTaskCardEvent(event) {
+  const content = event.target.querySelector(".task-card-content");
+
+  if (content.style.maxHeight) {
+    collapseTaskCard(content);
+    return;
+  }
+
+  expandTaskCard(content);
 }
 
 function updateTaskToCurrentProject(task, form) {
