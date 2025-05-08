@@ -142,6 +142,16 @@ export function closeDialog(selector) {
   dialog?.close();
 }
 
+export function expandTaskCard(element) {
+  element.style.maxHeight = element.scrollHeight + "px";
+  element.style.marginBottom = "16px";
+}
+
+export function collapseTaskCard(element) {
+  element.style.maxHeight = null;
+  element.style.marginBottom = "0";
+}
+
 function getPriorityName(val) {
   if (val === "0") {
     return "Low";
