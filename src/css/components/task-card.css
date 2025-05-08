@@ -3,10 +3,10 @@
   display: grid;
   align-items: center;
   gap: 16px;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   margin-bottom: 8px;
-  padding: 16px 24px;
+  padding: 16px 0;
   background-color: var(--ziggurat-50);
   border-radius: 16px;
 }
@@ -26,6 +26,18 @@
   gap: 16px;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 90px auto;
+  padding: 0 24px;
+}
+
+.task-card-content {
+  display: grid;
+  align-items: center;
+  gap: 16px;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 1fr;
+  padding: 16px 24px 0 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-colour);
 }
 
 .task-card-name-date-container {
@@ -43,14 +55,19 @@
 .task-card-project-pill,
 .task-card-priority-pill {
   padding: 2px 12px;
-  background-color: var(--ziggurat-200);
   border-radius: 100px;
-  font-weight: var(--font-weight-bold);
   text-align: center;
+}
+
+.task-card-project-pill {
+  background-color: var(--ziggurat-100);
+  border: 1px solid var(--ziggurat-400);
+  font-size: 12px;
 }
 
 .task-card-priority-pill {
   max-width: 60px;
+  font-weight: var(--font-weight-semibold);
 }
 
 .low-priority {
