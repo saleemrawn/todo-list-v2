@@ -2,11 +2,10 @@
   box-shadow: var(--container-background);
   display: grid;
   align-items: center;
-  gap: 16px;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr auto;
   grid-template-columns: 1fr;
   margin-bottom: 8px;
-  padding: 16px 0;
+  padding-top: 16px;
   background-color: var(--ziggurat-50);
   border-radius: 16px;
 }
@@ -21,6 +20,7 @@
 }
 
 .task-card-details {
+  pointer-events: none;
   display: grid;
   align-items: center;
   gap: 40px;
@@ -30,14 +30,16 @@
 }
 
 .task-card-content {
+  pointer-events: none;
   display: grid;
   align-items: center;
   gap: 16px;
   grid-template-rows: 1fr;
   grid-template-columns: auto 1fr;
+  overflow: hidden;
+  max-height: 0;
   padding: 16px 24px 0 24px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-colour);
+  transition: max-height 0.15s ease-in-out, margin-bottom 0.15s ease-in-out;
 }
 
 .task-card-name-date-container {
@@ -52,6 +54,7 @@
   gap: 8px;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
+  pointer-events: auto;
 }
 
 .task-card-date {
