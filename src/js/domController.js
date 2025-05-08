@@ -21,6 +21,13 @@ export function addTaskToDOM(project, task) {
             </div>
             <button class="task-edit-button">Edit</button>
         </div>
+
+        <div class="task-card-content">
+              <div class="task-card-project-pill">
+                <p class="task-card-project">${project.projectName}</p>
+              </div>
+              <p class="task-card-description">${task.description}</p>
+        </div>
       </div>
     `
   );
