@@ -3,4 +3,5 @@
 @import url(sidebar.css);
 @import url(project.css);
 @import url(./components/button.css);
+@import url(./components/checkbox.css);
 @import url(./components/task-card.css);
