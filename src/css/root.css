@@ -30,6 +30,9 @@
   --font-weight-bold: 700;
   --font-weight-black: 900;
 
+  --icon-font-family: "Font Awesome 6 Free";
+  --icon-font-weight: 900;
+
   --button-default-background-colour: var(--ziggurat-200);
   --button-default-text-colour: var(--ziggurat-950);
   --button-default-hover-background-colour: var(--ziggurat-300);
