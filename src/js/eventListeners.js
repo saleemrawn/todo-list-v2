@@ -15,6 +15,7 @@ import {
   resetAddTaskForm,
   resetProjectForm,
   setProjectSelectedPage,
+  toggleCheckedAttribute,
   updateSelectedPage,
 } from "./domController.js";
 import {
@@ -49,6 +50,9 @@ export function loadEventListeners() {
   addGlobalEventListener("click", ".delete-project", handleDeleteProjectEvent);
   addGlobalEventListener("click", ".task-card", (card) => {
     handleCollapsibleTaskCardEvent(card);
+  });
+  addGlobalEventListener("click", ".task-checkbox", (checkbox) => {
+    handleTaskCheckboxEvent(checkbox);
   });
 }
 
@@ -265,6 +269,30 @@ function handleCollapsibleTaskCardEvent(event) {
   }
 
   expandTaskCard(content);
+}
+
+function handleTaskCheckboxEvent(checkbox) {
+  const projects = projectsCollection.getProjects();
+  const parent = findParentElement(checkbox.target, ".task-card");
+  const projectID = parent.getAttribute("data-project-id");
+  const taskID = parent.getAttribute("data-task-id");
+
+  for (const project of projects) {
+    for (const task of project.taskList) {
+      if (task.taskID === taskID) {
+        if (task.completed === false) {
+          task.completed = true;
+          addProjectToStorage(projectID, project);
+          toggleCheckedAttribute(checkbox);
+          return;
+        }
+
+        task.completed = false;
+        addProjectToStorage(projectID, project);
+        toggleCheckedAttribute(checkbox);
+      }
+    }
+  }
 }
 
 function updateTaskToCurrentProject(task, form) {
