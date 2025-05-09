@@ -1,5 +1,5 @@
 export default class Task {
-  constructor({ name, projectID = "", description = "", dueDate = "", priority = 0, completed = false, notes = "" }) {
+  constructor({ name, projectID = "", description = "", dueDate = "", priority = 0, completed = false }) {
     this.taskID = crypto.randomUUID();
     this.projectID = projectID;
     this.dateCreated = Date.now();
@@ -8,6 +8,5 @@ export default class Task {
     this.dueDate = dueDate;
     this.priority = priority;
     this.completed = completed;
-    this.notes = notes;
   }
 }

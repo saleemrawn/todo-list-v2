@@ -104,7 +104,6 @@ function handleEditTaskEvent(button) {
           form.elements["task-due-date"].value = task.dueDate;
           form.elements["task-priority"].value = task.priority;
           form.elements["task-project"].value = task.projectID;
-          form.elements["task-notes"].value = task.notes;
           form.elements["taskID"].value = task.taskID;
         }
       });
@@ -242,7 +241,6 @@ function handleNewTask(project, form) {
     dueDate: form.get("task-due-date"),
     priority: form.get("task-priority"),
     projectID: form.get("task-project"),
-    notes: form.get("task-notes"),
   });
 
   project.addTask(task);
@@ -349,7 +347,6 @@ function getSourceFormObj(form) {
     dueDate: form.get("task-due-date"),
     priority: form.get("task-priority"),
     projectID: form.get("task-project"),
-    notes: form.get("task-notes"),
   };
 
   return source;
