@@ -39,6 +39,7 @@
   overflow: hidden;
   max-height: 0;
   padding: 16px 24px 0 24px;
+  transition: max-height 0.15s ease-out, margin-bottom 0.15s ease-out;
 }
 
 .task-card-name-date-container {
