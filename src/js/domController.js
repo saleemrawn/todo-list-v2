@@ -153,6 +153,15 @@ export function collapseTaskCard(element) {
   element.style.marginBottom = "0";
 }
 
+export function toggleCheckedAttribute(checkbox) {
+  if (checkbox.target.hasAttribute("checked")) {
+    checkbox.target.removeAttribute("checked");
+    return;
+  }
+
+  checkbox.target.setAttribute("checked", "checked");
+}
+
 function getPriorityName(val) {
   if (val === "0") {
     return "Low";
