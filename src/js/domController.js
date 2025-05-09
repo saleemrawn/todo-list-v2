@@ -12,6 +12,7 @@ export function addTaskToDOM(project, task) {
     `
       <div class="task-card" data-task-id="${task.taskID}" data-project-id="${project.id}">
         <div class="task-card-details">
+            <input type="checkbox" class="task-checkbox" />
             <div class="task-card-name-date-container">
               <p class="task-card-name">${task.name}</p>
               <p class="task-card-date">${lightFormat(task.dueDate, "dd/MM/yyyy")}</p>
