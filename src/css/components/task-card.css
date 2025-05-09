@@ -23,9 +23,9 @@
   pointer-events: none;
   display: grid;
   align-items: center;
-  gap: 40px;
+  gap: 16px;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 90px auto;
+  grid-template-columns: auto 1fr 120px auto;
   padding: 0 24px;
 }
 
@@ -39,7 +39,6 @@
   overflow: hidden;
   max-height: 0;
   padding: 16px 24px 0 24px;
-  transition: max-height 0.15s ease-in-out, margin-bottom 0.15s ease-in-out;
 }
 
 .task-card-name-date-container {
