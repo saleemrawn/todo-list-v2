@@ -124,7 +124,7 @@ export function setProjectSelectedPage(projectID) {
 }
 
 export function resetAddTaskForm() {
-  const form = document.querySelector(".add-task-form");
+  const form = document.querySelector(".task-form");
 
   form.reset();
   form.elements["taskID"].value = "";

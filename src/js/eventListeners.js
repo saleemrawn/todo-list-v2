@@ -44,7 +44,7 @@ export function loadEventListeners() {
   addGlobalEventListener("click", ".task-edit-button", handleEditTaskEvent);
   addGlobalEventListener("click", ".task-cancel-button", handleCancelAddTaskEvent);
   addGlobalEventListener("click", ".task-delete-button", handleDeleteTaskEvent);
-  addGlobalEventListener("submit", ".add-task-form", handleAddTaskSubmitEvent);
+  addGlobalEventListener("submit", ".task-form", handleAddTaskSubmitEvent);
   addGlobalEventListener("click", ".project-button", handleProjectSidebarButton);
   addGlobalEventListener("click", ".edit-project", handleEditProjectEvent);
   addGlobalEventListener("click", ".delete-project", handleDeleteProjectEvent);
@@ -75,7 +75,7 @@ function addGlobalEventListener(type, selector, callback, parent = document) {
 }
 
 function handleAddTaskDialogEvent() {
-  const dialog = document.querySelector(".add-task-dialog");
+  const dialog = document.querySelector(".task-dialog");
 
   loadProjectsToDropdown();
   resetAddTaskForm();
@@ -83,8 +83,8 @@ function handleAddTaskDialogEvent() {
 }
 
 function handleEditTaskEvent(button) {
-  const dialog = document.querySelector(".add-task-dialog");
-  const form = document.querySelector(".add-task-form");
+  const dialog = document.querySelector(".task-dialog");
+  const form = document.querySelector(".task-form");
 
   loadProjectsToDropdown();
   resetAddTaskForm();
@@ -133,7 +133,7 @@ function handleDeleteTaskEvent(button) {
 }
 
 function handleCancelAddTaskEvent() {
-  const dialog = document.querySelector(".add-task-dialog");
+  const dialog = document.querySelector(".task-dialog");
   resetAddTaskForm();
   dialog.close();
 }
@@ -141,7 +141,7 @@ function handleCancelAddTaskEvent() {
 function handleAddTaskSubmitEvent(event) {
   event.preventDefault();
 
-  const form = document.querySelector(".add-task-form");
+  const form = document.querySelector(".task-form");
   const formData = new FormData(form);
   const projects = projectsCollection.getProjects();
 
@@ -248,7 +248,7 @@ function handleNewTask(project, form) {
   addTaskToDOM(project, task);
 
   resetAddTaskForm();
-  closeDialog(".add-task-dialog");
+  closeDialog(".task-dialog");
   reloadPage();
 }
 
@@ -298,7 +298,7 @@ function updateTaskToCurrentProject(task, form) {
   clearStorage();
   addAllProjectsToStorage();
   resetAddTaskForm();
-  closeDialog(".add-task-dialog");
+  closeDialog(".task-dialog");
   reloadPage();
 }
 
@@ -315,7 +315,7 @@ function updateTaskToNewProject(project, task, form) {
   addAllProjectsToStorage();
 
   resetAddTaskForm();
-  closeDialog(".add-task-dialog");
+  closeDialog(".task-dialog");
   reloadPage();
 }
 
