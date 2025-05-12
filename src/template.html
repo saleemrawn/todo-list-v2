@@ -33,15 +33,15 @@
 
     <dialog class="project-dialog">
       <form class="project-form">
-        <div class="project-form-name-container">
+        <div class="form-row project-form-name-container">
           <label for="project-name">Project name</label>
           <input type="text" id="project-name" name="project-name" />
         </div>
-        <div class="project-description-container">
+        <div class="form-row project-description-container">
           <label for="project-description">Description</label>
           <input type="text" id="project-description" name="project-description" />
         </div>
-        <div class="dialog-buttons-container">
+        <div class="form-buttons-container">
           <button type="button" class="project-cancel-button" formmethod="dialog">Cancel</button>
           <button type="submit" class="save-button">Save</button>
         </div>
@@ -51,19 +51,19 @@
 
     <dialog class="task-dialog">
       <form id="task-form" class="task-form">
-        <div class="task-name-container">
+        <div class="form-row task-name-container">
           <label for="task-name">Task name</label>
           <input type="text" id="task-name" name="task-name" />
         </div>
-        <div class="task-description-container">
+        <div class="form-row task-description-container">
           <label for="task-description">Description</label>
           <input type="text" id="task-description" name="task-description" />
         </div>
-        <div class="task-due-date-container">
+        <div class="form-row task-due-date-container">
           <label for="task-due-date">Due Date</label>
           <input type="date" id="task-due-date" name="task-due-date" />
         </div>
-        <div class="task-priority-container">
+        <div class="form-row task-priority-container">
           <label for="task-priority">Priority</label>
           <select name="task-priority" id="task-priority">
             <option value="0">Low</option>
@@ -71,11 +71,11 @@
             <option value="2">High</option>
           </select>
         </div>
-        <div class="task-project-container">
+        <div class="form-row task-project-container">
           <label for="task-project">Project</label>
           <select name="task-project" id="task-project"></select>
         </div>
-        <div class="dialog-buttons-container">
+        <div class="form-buttons-container">
           <button type="button" class="task-cancel-button" formmethod="dialog">Cancel</button>
           <button type="submit" class="save-button">Save</button>
         </div>
