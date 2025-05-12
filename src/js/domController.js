@@ -132,7 +132,7 @@ export function resetAddTaskForm() {
 }
 
 export function resetProjectForm() {
-  const form = document.querySelector(".new-project-form");
+  const form = document.querySelector(".project-form");
 
   form.reset();
   form.elements["projectID"].value = "";

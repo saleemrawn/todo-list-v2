@@ -39,7 +39,7 @@ export function loadEventListeners() {
   });
   addGlobalEventListener("click", ".new-project-button", handleNewProjectDialogEvent);
   addGlobalEventListener("click", ".new-project-cancel-button", handleCancelNewProjectEvent);
-  addGlobalEventListener("submit", ".new-project-form", handleNewProjectSubmitEvent);
+  addGlobalEventListener("submit", ".project-form", handleNewProjectSubmitEvent);
   addGlobalEventListener("click", ".add-task-button", handleAddTaskDialogEvent);
   addGlobalEventListener("click", ".task-edit-button", handleEditTaskEvent);
   addGlobalEventListener("click", ".task-cancel-button", handleCancelAddTaskEvent);
@@ -179,7 +179,7 @@ function handleCancelNewProjectEvent() {
 function handleNewProjectSubmitEvent(event) {
   event.preventDefault();
 
-  const form = document.querySelector(".new-project-form");
+  const form = document.querySelector(".project-form");
   const dialog = document.querySelector(".project-dialog");
   const formData = new FormData(form);
   const project = new Project({
@@ -207,7 +207,7 @@ function handleNewProjectSubmitEvent(event) {
 
 function handleEditProjectEvent() {
   const dialog = document.querySelector(".project-dialog");
-  const form = document.querySelector(".new-project-form");
+  const form = document.querySelector(".project-form");
 
   resetProjectForm();
   dialog.showModal();
