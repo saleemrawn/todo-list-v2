@@ -68,18 +68,37 @@ button.selected {
   background-color: var(--button-default-hover-background-colour);
 }
 
+button.icon-only {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  text-align: center;
+}
+
 button i {
   margin-right: 6px;
 }
 
+button span.hide {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.task-edit-button::before,
 .edit-project::before {
   content: "\f044";
-  font-family: "Font Awesome 6 Free";
+  font-family: var(--icon-font-family);
   font-size: 16px;
 }
 
+.task-delete-button::before,
 .delete-project::before {
   content: "\f2ed";
-  font-family: "Font Awesome 6 Free";
+  font-family: var(--icon-font-family);
   font-size: 16px;
 }
