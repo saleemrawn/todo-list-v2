@@ -1,0 +1,25 @@
+form {
+  gap: 16px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+
+label {
+  font-weight: var(--font-weight-semibold);
+}
+
+.form-row {
+  gap: 4px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+
+.form-buttons-container {
+  gap: 8px;
+  display: grid;
+  margin-top: 8px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+}

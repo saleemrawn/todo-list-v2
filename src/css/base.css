@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-
 html {
   font-size: 14px;
 }
 
 body {
-  display: grid;
   gap: 40px;
-  grid-template-rows: 100vh;
-  grid-template-columns: 200px 1fr;
   margin: 0;
+  display: grid;
+  grid-template-rows: 100vh;
   background-color: #ebf2f3;
+  grid-template-columns: 200px 1fr;
   font-family: var(--text-font-family);
 }
 
@@ -20,10 +19,10 @@ main {
 
 #content {
   display: grid;
+  padding-right: 40px;
   justify-content: center;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  padding-right: 40px;
 }
 
 h1,
@@ -56,4 +55,50 @@ ul {
 
 ul li {
   list-style: none;
+}
+
+input[type="text"],
+input[type="date"] {
+  border-radius: var(--border-radius-24);
+  border: 1px solid var(--border-colour);
+}
+
+input[type="text"] {
+  padding: 6px 16px;
+}
+
+input[type="date"] {
+  padding: 6px 8px;
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="text"]:focus-visible {
+  outline: none;
+  background-color: var(--ziggurat-50);
+  border: 1px solid var(--ziggurat-600);
+}
+
+select,
+option {
+  font-family: inherit;
+}
+
+select {
+  border: none;
+  min-height: 32px;
+  padding: 6px 12px;
+  font-family: inherit;
+  background-color: var(--ziggurat-200);
+  border-radius: var(--border-radius-24);
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+dialog {
+  border: none;
+  padding: 40px;
+  border-radius: 24px;
 }
