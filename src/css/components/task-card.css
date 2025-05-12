@@ -91,3 +91,14 @@
 .high-priority {
   background-color: var(--high-priority-colour);
 }
+
+.overdue {
+  font-weight: var(--font-weight-bold);
+  color: #d50000;
+}
+
+.overdue::before {
+  content: "\f1da";
+  font-family: var(--icon-font-family);
+  margin-right: 6px;
+}
