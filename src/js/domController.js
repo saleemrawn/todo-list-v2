@@ -1,4 +1,4 @@
-import { lightFormat } from "date-fns";
+import { getDate, lightFormat } from "date-fns";
 import { projectsCollection } from "./projectsCollection.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
@@ -15,7 +15,7 @@ export function addTaskToDOM(project, task) {
             <input type="checkbox" class="task-checkbox" ${task.completed === true ? 'checked="checked"' : ""} />
             <div class="task-card-name-date-container">
               <p class="task-card-name">${task.name}</p>
-              <p class="task-card-date">${lightFormat(task.dueDate, "dd/MM/yyyy")}</p>
+              <p class="task-card-date ${checkOverdueDate(task.dueDate)}">${lightFormat(task.dueDate, "dd/MM/yyyy")}</p>
             </div>
             <div class="task-card-priority-pill" data-priority="${task.priority}">
               <p class="task-card-priority">${getPriorityName(task.priority)}</p>
@@ -192,4 +192,10 @@ function setPriorityColours() {
       pill.classList.add("high-priority");
     }
   });
+}
+
+function checkOverdueDate(date) {
+  if (date < lightFormat(new Date(), "yyyy-MM-dd")) {
+    return "overdue";
+  }
 }
