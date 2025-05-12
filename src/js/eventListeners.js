@@ -163,14 +163,14 @@ function handleAddTaskSubmitEvent(event) {
 }
 
 function handleNewProjectDialogEvent() {
-  const dialog = document.querySelector(".new-project-dialog");
+  const dialog = document.querySelector(".project-dialog");
 
   resetProjectForm();
   dialog.showModal();
 }
 
 function handleCancelNewProjectEvent() {
-  const dialog = document.querySelector(".new-project-dialog");
+  const dialog = document.querySelector(".project-dialog");
 
   resetProjectForm();
   dialog.close();
@@ -180,7 +180,7 @@ function handleNewProjectSubmitEvent(event) {
   event.preventDefault();
 
   const form = document.querySelector(".new-project-form");
-  const dialog = document.querySelector(".new-project-dialog");
+  const dialog = document.querySelector(".project-dialog");
   const formData = new FormData(form);
   const project = new Project({
     id: formData.get("projectID"),
@@ -206,7 +206,7 @@ function handleNewProjectSubmitEvent(event) {
 }
 
 function handleEditProjectEvent() {
-  const dialog = document.querySelector(".new-project-dialog");
+  const dialog = document.querySelector(".project-dialog");
   const form = document.querySelector(".new-project-form");
 
   resetProjectForm();
