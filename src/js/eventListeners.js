@@ -38,7 +38,7 @@ export function loadEventListeners() {
     updateSelectedPage(button);
   });
   addGlobalEventListener("click", ".new-project-button", handleNewProjectDialogEvent);
-  addGlobalEventListener("click", ".new-project-cancel-button", handleCancelNewProjectEvent);
+  addGlobalEventListener("click", ".project-cancel-button", handleCancelNewProjectEvent);
   addGlobalEventListener("submit", ".project-form", handleNewProjectSubmitEvent);
   addGlobalEventListener("click", ".add-task-button", handleAddTaskDialogEvent);
   addGlobalEventListener("click", ".task-edit-button", handleEditTaskEvent);
@@ -184,8 +184,8 @@ function handleNewProjectSubmitEvent(event) {
   const formData = new FormData(form);
   const project = new Project({
     id: formData.get("projectID"),
-    name: formData.get("new-project-name"),
-    description: formData.get("new-project-description"),
+    name: formData.get("project-name"),
+    description: formData.get("project-description"),
   });
 
   if (formData.get("projectID") !== "") {
@@ -218,8 +218,8 @@ function handleEditProjectEvent() {
 
   projects.forEach((project) => {
     if (project.id === projectID) {
-      form.elements["new-project-name"].value = project.projectName;
-      form.elements["new-project-description"].value = project.description;
+      form.elements["project-name"].value = project.projectName;
+      form.elements["project-description"].value = project.description;
       form.elements["projectID"].value = project.id;
     }
   });
@@ -330,8 +330,8 @@ function updateExistingProject(formData) {
 
   for (const project of projects) {
     if (formData.get("projectID") === project.id) {
-      project.projectName = formData.get("new-project-name");
-      project.description = formData.get("new-project-description");
+      project.projectName = formData.get("project-name");
+      project.description = formData.get("project-description");
     }
   }
 
