@@ -21,8 +21,8 @@ export function addTaskToDOM(project, task) {
               <p class="task-card-priority">${getPriorityName(task.priority)}</p>
             </div>
             <div class="task-card-action-buttons">
-              <button class="task-edit-button">Edit</button>
-              <button class="task-delete-button">Delete</button>
+              <button class="task-edit-button" title="Edit task"><span class="hide">Edit task</span></button>
+              <button class="task-delete-button" title="Delete task"><span class="hide">Delete task</span></button>
             </div>
         </div>
 
