@@ -1,10 +1,10 @@
-import { lightFormat } from "date-fns";
 import { projectsCollection } from "./projectsCollection.js";
 import { addPageTitleToDOM, addTaskToDOM, resetContentContainer, setPageType } from "./domController.js";
+import { getTodayTimestamp } from "./helpers.js";
 
 export default function loadToday() {
   const projects = projectsCollection.getProjects();
-  const todayDate = lightFormat(new Date(), "yyyy-MM-dd");
+  const todayDate = getTodayTimestamp();
 
   resetContentContainer();
   setPageType("today");
