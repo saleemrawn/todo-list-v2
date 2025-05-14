@@ -1,17 +1,17 @@
 import { lightFormat } from "date-fns";
-import { projectsCollection } from "./projectsCollection.js";
+import { projectsCollection, getProjectName } from "./projectsCollection.js";
 import { getFormattedDate } from "./helpers.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
 import loadProject from "./projectTemplate.js";
 
-export function addTaskToDOM(project, task) {
+export function addTaskToDOM(task) {
   const content = document.querySelector("#content");
 
   content.insertAdjacentHTML(
     "beforeend",
     `
-      <div class="task-card" data-task-id="${task.taskID}" data-project-id="${project.id}">
+      <div class="task-card" data-task-id="${task.taskID}" data-project-id="${task.projectID}">
         <div class="task-card-details">
             <input type="checkbox" class="task-checkbox" ${task.completed === true ? 'checked="checked"' : ""} />
             <div class="task-card-name-date-container">
@@ -29,7 +29,7 @@ export function addTaskToDOM(project, task) {
 
         <div class="task-card-content">
               <div class="task-card-project-pill">
-                <p class="task-card-project">${project.projectName}</p>
+                <p class="task-card-project">${getProjectName(task.projectID)}</p>
               </div>
               <p class="task-card-description">${task.description}</p>
         </div>
