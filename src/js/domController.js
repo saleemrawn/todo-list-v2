@@ -199,6 +199,10 @@ function checkOverdueDate(dueDate) {
   const date = new Date();
   const today = Date.parse(lightFormat(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`, "yyyy-MM-dd"));
 
+  if (dueDate === "") {
+    return;
+  }
+
   if (dueDate < today) {
     return "overdue";
   }

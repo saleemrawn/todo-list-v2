@@ -6,6 +6,10 @@ export function findParentElement(element, selector) {
 }
 
 export function getFormattedDate(date) {
+  if (date === "") {
+    return "--/--/----";
+  }
+
   const timestamp = new Date(date);
   return lightFormat(timestamp, "dd/MM/yyyy");
 }
