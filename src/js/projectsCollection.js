@@ -44,6 +44,19 @@ export function getProjectName(id) {
   }
 }
 
+export function getAllTasks() {
+  const projects = projectsCollection.getProjects();
+  const tasks = [];
+
+  for (const project of projects) {
+    for (const task of project.taskList) {
+      tasks.push(task);
+    }
+  }
+
+  return tasks;
+}
+
 export function setProjectObjPrototype() {
   const projects = projectsCollection.getProjects();
   projects.forEach((project) => {
