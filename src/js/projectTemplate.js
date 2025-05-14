@@ -1,4 +1,4 @@
-import { projectsCollection } from "./projectsCollection.js";
+import { projectsCollection, sortTasksByDueDateAsc } from "./projectsCollection.js";
 import {
   addPageTitleToDOM,
   addProjectActionButtonsToDOM,
@@ -21,8 +21,9 @@ export default function loadProject(id) {
       setProjectID("#content", project.id);
       addPageTitleToDOM(project.projectName.toLowerCase());
       addProjectActionButtonsToDOM();
+      sortTasksByDueDateAsc(project.taskList);
       for (const task of project.taskList) {
-        addTaskToDOM(project, task);
+        addTaskToDOM(task);
       }
     }
   }
