@@ -40,3 +40,11 @@ export function setProjectObjPrototype() {
     Object.setPrototypeOf(project, Project.prototype);
   });
 }
+
+export function sortTasksByDueDateAsc(project) {
+  project.taskList.sort((a, b) => a.dueDate - b.dueDate);
+}
+
+export function sortTasksByDueDateDesc(project) {
+  project.taskList.sort((a, b) => b.dueDate - a.dueDate);
+}
