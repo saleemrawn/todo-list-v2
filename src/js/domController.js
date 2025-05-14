@@ -1,5 +1,6 @@
-import { getDate, lightFormat } from "date-fns";
+import { lightFormat } from "date-fns";
 import { projectsCollection } from "./projectsCollection.js";
+import { getFormattedDate } from "./helpers.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
 import loadProject from "./projectTemplate.js";
@@ -66,7 +67,7 @@ export function addProjectActionButtonsToDOM() {
 
 export function addProjectButtonsToDOM(container) {
   const projects = projectsCollection.getProjects();
-
+  projects.sort((a, b) => a.dateCreated - b.dateCreated);
   projects.forEach((project) => {
     container.insertAdjacentHTML(
       "beforeend",
@@ -194,8 +195,11 @@ function setPriorityColours() {
   });
 }
 
-function checkOverdueDate(date) {
-  if (date < lightFormat(new Date(), "yyyy-MM-dd")) {
+function checkOverdueDate(dueDate) {
+  const date = new Date();
+  const today = Date.parse(lightFormat(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`, "yyyy-MM-dd"));
+
+  if (dueDate < today) {
     return "overdue";
   }
 }
