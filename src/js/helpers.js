@@ -9,3 +9,8 @@ export function getFormattedDate(date) {
   const timestamp = new Date(date);
   return lightFormat(timestamp, "dd/MM/yyyy");
 }
+
+export function getTodayTimestamp() {
+  const date = new Date();
+  return Date.parse(lightFormat(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`, "yyyy-MM-dd"));
+}
