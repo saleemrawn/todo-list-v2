@@ -26,7 +26,7 @@ import {
   deleteProjectFromStorage,
 } from "./storage.js";
 import { addTaskToProject } from "./projectTaskConnector.js";
-import { findParentElement } from "./helpers.js";
+import { findParentElement, getFormattedDatePicker } from "./helpers.js";
 
 export function loadEventListeners() {
   addGlobalEventListener("click", ".today-button", (button) => {
@@ -101,7 +101,7 @@ function handleEditTaskEvent(button) {
         if (task.taskID === taskID) {
           form.elements["task-name"].value = task.name;
           form.elements["task-description"].value = task.description;
-          form.elements["task-due-date"].value = task.dueDate;
+          form.elements["task-due-date"].value = getFormattedDatePicker(task.dueDate);
           form.elements["task-priority"].value = task.priority;
           form.elements["task-project"].value = task.projectID;
           form.elements["taskID"].value = task.taskID;
