@@ -344,7 +344,7 @@ function getSourceFormObj(form) {
     id: form.get("taskID"),
     name: form.get("task-name"),
     description: form.get("task-description"),
-    dueDate: form.get("task-due-date"),
+    dueDate: Date.parse(form.get("task-due-date")),
     priority: form.get("task-priority"),
     projectID: form.get("task-project"),
   };
