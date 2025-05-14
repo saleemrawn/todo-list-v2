@@ -34,6 +34,16 @@ export const projectsCollection = (function () {
   };
 })();
 
+export function getProjectName(id) {
+  const projects = projectsCollection.getProjects();
+
+  for (const project of projects) {
+    if (id === project.id) {
+      return project.projectName;
+    }
+  }
+}
+
 export function setProjectObjPrototype() {
   const projects = projectsCollection.getProjects();
   projects.forEach((project) => {
