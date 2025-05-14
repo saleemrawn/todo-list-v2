@@ -245,7 +245,7 @@ function handleNewTask(project, form) {
 
   project.addTask(task);
   addProjectToStorage(project.id, project);
-  addTaskToDOM(project, task);
+  addTaskToDOM(task);
 
   resetAddTaskForm();
   closeDialog(".task-dialog");
