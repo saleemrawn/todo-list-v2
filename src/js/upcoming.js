@@ -1,21 +1,19 @@
-import { projectsCollection, sortTasksByDueDateAsc } from "./projectsCollection.js";
+import { getAllTasks, sortTasksByDueDateAsc } from "./projectsCollection.js";
 import { addPageTitleToDOM, addTaskToDOM, resetContentContainer, setPageType } from "./domController.js";
 import { getTodayTimestamp } from "./helpers.js";
 
 export default function loadUpcoming() {
-  const projects = projectsCollection.getProjects();
+  const tasks = getAllTasks();
   const todayDate = getTodayTimestamp();
 
   resetContentContainer();
   setPageType("upcoming");
   addPageTitleToDOM("upcoming");
+  sortTasksByDueDateAsc(tasks);
 
-  for (const project of projects) {
-    sortTasksByDueDateAsc(project);
-    for (const task of project.taskList) {
-      if (todayDate < task.dueDate) {
-        addTaskToDOM(project, task);
-      }
+  for (const task of tasks) {
+    if (todayDate < task.dueDate) {
+      addTaskToDOM(task);
     }
   }
 }
