@@ -14,6 +14,15 @@ export function getFormattedDate(date) {
   return lightFormat(timestamp, "dd/MM/yyyy");
 }
 
+export function getFormattedDatePicker(date) {
+  if (date === "") {
+    return;
+  }
+
+  const timestamp = new Date(date);
+  return lightFormat(timestamp, "yyyy-MM-dd");
+}
+
 export function getTodayTimestamp() {
   const date = new Date();
   return Date.parse(lightFormat(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`, "yyyy-MM-dd"));
