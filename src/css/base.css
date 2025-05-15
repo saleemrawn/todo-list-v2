@@ -19,10 +19,13 @@ main {
 
 #content {
   display: grid;
-  padding-right: 40px;
+  margin-right: 40px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
   justify-content: center;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
+  border-bottom: 1px solid var(--ziggurat-300);
 }
 
 h1,
@@ -105,9 +108,9 @@ dialog {
 
 .page-title-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
   margin-bottom: 16px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .page-title {
