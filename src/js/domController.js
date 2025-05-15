@@ -54,6 +54,11 @@ export function addPageTitleToDOM(title) {
   );
 }
 
+export function addPageDescriptionToDOM(description) {
+  const pageInfo = document.querySelector(".page-info");
+  pageInfo.insertAdjacentHTML("beforeend", `<p class="page-description">${description !== "" ? description : ""}</p>`);
+}
+
 export function addProjectActionButtonsToDOM() {
   const container = document.querySelector(".page-title-container");
   container.insertAdjacentHTML(
