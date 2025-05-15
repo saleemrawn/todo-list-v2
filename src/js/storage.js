@@ -1,4 +1,5 @@
-import { projectsCollection } from "./projectsCollection.js";
+import Project from "./project.js";
+import { addDefaultProject, projectsCollection } from "./projectsCollection.js";
 
 export function addProjectToStorage(projectID, project) {
   localStorage.setItem(projectID, JSON.stringify(project));
@@ -17,6 +18,11 @@ export function deleteProjectFromStorage(projectID) {
 }
 
 export function loadProjectsFromStorage() {
+  if (window.localStorage.length === 0) {
+    addDefaultProject();
+    return;
+  }
+
   Object.values(window.localStorage).forEach((project) => {
     projectsCollection.addProject(JSON.parse(project));
   });
