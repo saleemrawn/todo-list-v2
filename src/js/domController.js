@@ -119,6 +119,11 @@ export function setProjectID(selector, id) {
   container.setAttribute("data-project-id", `${id}`);
 }
 
+export function removeProjectID(selector) {
+  const container = document.querySelector(selector);
+  container.removeAttribute("data-project-id");
+}
+
 export function updateSelectedPage(button) {
   const appButtons = document.querySelectorAll(".app-buttons button");
 
