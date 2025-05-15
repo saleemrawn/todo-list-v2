@@ -95,6 +95,7 @@ export function loadProjectsToDropdown() {
   const dropdown = document.querySelector("#task-project");
 
   dropdown.innerHTML = "";
+  dropdown.insertAdjacentHTML("beforeend", `<option value="">--Please choose an option--</option>`);
 
   for (const project of projects) {
     dropdown.insertAdjacentHTML("beforeend", `<option value="${project.id}">${project.projectName}</option>`);
