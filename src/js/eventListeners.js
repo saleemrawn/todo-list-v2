@@ -79,6 +79,8 @@ function handleAddTaskDialogEvent() {
 
   loadProjectsToDropdown();
   resetAddTaskForm();
+  setProjectFormDropdown();
+
   dialog.showModal();
 }
 
@@ -304,7 +306,7 @@ function updateTaskToCurrentProject(task, form) {
 
 function updateTaskToNewProject(project, task, form) {
   const projectID = form.get("task-project");
-  const index = project.taskList.findIndex((task) => task.id === form.get("taskID"));
+  const index = project.taskList.findIndex((task) => task.taskID === form.get("taskID"));
 
   Object.assign(task, getSourceFormObj(form));
 
@@ -350,4 +352,13 @@ function getSourceFormObj(form) {
   };
 
   return source;
+}
+
+function setProjectFormDropdown() {
+  const parent = document.querySelector("#content");
+
+  if (parent.hasAttribute("data-project-id")) {
+    const form = document.querySelector(".task-form");
+    form.elements["task-project"].value = parent.getAttribute("data-project-id");
+  }
 }
