@@ -249,7 +249,7 @@ function handleNewTask(project, form) {
 
   resetAddTaskForm();
   closeDialog(".task-dialog");
-  reloadPage();
+  reloadPage(form.get("task-project"));
 }
 
 function handleProjectSidebarButton(event) {
@@ -299,7 +299,7 @@ function updateTaskToCurrentProject(task, form) {
   addAllProjectsToStorage();
   resetAddTaskForm();
   closeDialog(".task-dialog");
-  reloadPage();
+  reloadPage(form.get("task-project"));
 }
 
 function updateTaskToNewProject(project, task, form) {
@@ -316,7 +316,7 @@ function updateTaskToNewProject(project, task, form) {
 
   resetAddTaskForm();
   closeDialog(".task-dialog");
-  reloadPage();
+  reloadPage(form.get("task-project"));
 }
 
 function loadProjectSidebarButtons() {
