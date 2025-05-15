@@ -46,7 +46,9 @@ export function addPageTitleToDOM(title) {
     "beforeend",
     `
     <div class="page-title-container">
-      <h2>${title}</h2>
+      <div class="page-info">
+        <h2 class="page-title">${title}</h2>
+      </div>
     </div>
     `
   );
