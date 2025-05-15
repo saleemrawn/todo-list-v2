@@ -1,4 +1,5 @@
 import Project from "./project.js";
+import { addProjectToStorage } from "./storage.js";
 
 export const projectsCollection = (function () {
   const _projects = [];
@@ -33,6 +34,16 @@ export const projectsCollection = (function () {
     getProjectsCount,
   };
 })();
+
+export function addDefaultProject() {
+  const project = new Project({
+    name: "General",
+    description: "",
+  });
+
+  projectsCollection.addProject(project);
+  addProjectToStorage(project.id, project);
+}
 
 export function getProjectName(id) {
   const projects = projectsCollection.getProjects();
