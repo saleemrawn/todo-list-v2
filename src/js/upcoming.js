@@ -1,5 +1,11 @@
 import { getAllTasks, sortTasksByDueDateAsc } from "./projectsCollection.js";
-import { addPageTitleToDOM, addTaskToDOM, resetContentContainer, setPageType } from "./domController.js";
+import {
+  addPageTitleToDOM,
+  addTaskToDOM,
+  removeProjectID,
+  resetContentContainer,
+  setPageType,
+} from "./domController.js";
 import { getTodayTimestamp } from "./helpers.js";
 
 export default function loadUpcoming() {
@@ -8,6 +14,7 @@ export default function loadUpcoming() {
 
   resetContentContainer();
   setPageType("upcoming");
+  removeProjectID("#content");
   addPageTitleToDOM("upcoming");
   sortTasksByDueDateAsc(tasks);
 
