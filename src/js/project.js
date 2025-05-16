@@ -7,6 +7,10 @@ export default class Project {
     this.taskList = [];
   }
 
+  getID() {
+    return this.id;
+  }
+
   addTask(task = {}) {
     if (typeof task !== "object") {
       throw new Error(`Invalid argument: expected type 'object', but received type '${typeof task}'.`);
