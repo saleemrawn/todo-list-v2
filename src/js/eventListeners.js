@@ -122,12 +122,9 @@ function handleDeleteTaskEvent(button) {
   if (window.confirm("Are you sure you want to permanently delete the task?")) {
     for (const project of projects) {
       if (project.id === projectID) {
-        const index = project.taskList.findIndex((task) => task.id === taskID);
-
+        project.removeTask(taskID);
         deleteProjectFromStorage(projectID);
-        project.taskList.splice(index, 1);
         addProjectToStorage(projectID, project);
-
         parent.remove();
       }
     }
