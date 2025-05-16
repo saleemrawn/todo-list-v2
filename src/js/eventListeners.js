@@ -306,11 +306,9 @@ function updateTaskToCurrentProject(task, form) {
 
 function updateTaskToNewProject(project, task, form) {
   const projectID = form.get("task-project");
-  const index = project.taskList.findIndex((task) => task.taskID === form.get("taskID"));
 
+  project.removeTask(form.get("taskID"));
   Object.assign(task, getSourceFormObj(form));
-
-  project.taskList.splice(index, 1);
   addTaskToProject(projectID, task);
 
   clearStorage();
