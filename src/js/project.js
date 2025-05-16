@@ -15,8 +15,8 @@ export default class Project {
     this.taskList.push(task);
   }
 
-  removeTask(taskId) {
-    const index = this.taskList.findIndex((task) => task.id === taskId);
+  removeTask(taskID) {
+    const index = this.taskList.findIndex((task) => task.taskID === taskID);
     if (index !== -1) {
       this.taskList.splice(index, 1);
     }
