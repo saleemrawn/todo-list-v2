@@ -98,7 +98,7 @@ function handleEditTaskEvent(button) {
   const taskID = parent.getAttribute("data-task-id");
 
   projects.forEach((project) => {
-    if (project.id === projectID) {
+    if (project.getID() === projectID) {
       project.taskList.forEach((task) => {
         if (task.taskID === taskID) {
           form.elements["task-name"].value = task.name;
@@ -121,7 +121,7 @@ function handleDeleteTaskEvent(button) {
 
   if (window.confirm("Are you sure you want to permanently delete the task?")) {
     for (const project of projects) {
-      if (project.id === projectID) {
+      if (project.getID() === projectID) {
         project.removeTask(taskID);
         deleteProjectFromStorage(projectID);
         addProjectToStorage(projectID, project);
@@ -145,15 +145,16 @@ function handleAddTaskSubmitEvent(event) {
   const projects = projectsCollection.getProjects();
 
   for (const project of projects) {
-    if (project.id === formData.get("task-project") && formData.get("taskID") === "") handleNewTask(project, formData);
+    if (project.getID() === formData.get("task-project") && formData.get("taskID") === "")
+      handleNewTask(project, formData);
 
     for (const task of project.taskList) {
-      if (task.taskID === formData.get("taskID") && project.id === formData.get("task-project")) {
+      if (task.taskID === formData.get("taskID") && project.getID() === formData.get("task-project")) {
         updateTaskToCurrentProject(task, formData);
         return;
       }
 
-      if (task.taskID === formData.get("taskID") && project.id !== formData.get("task-project")) {
+      if (task.taskID === formData.get("taskID") && project.getID() !== formData.get("task-project")) {
         updateTaskToNewProject(project, task, formData);
         return;
       }
@@ -198,7 +199,7 @@ function handleNewProjectSubmitEvent(event) {
   }
 
   projectsCollection.addProject(project);
-  addProjectToStorage(project.id, project);
+  addProjectToStorage(project.getID(), project);
   resetProjectForm();
   loadProjectSidebarButtons();
   dialog.close();
@@ -216,10 +217,10 @@ function handleEditProjectEvent() {
   const projectID = parent.getAttribute("data-project-id");
 
   projects.forEach((project) => {
-    if (project.id === projectID) {
+    if (project.getID() === projectID) {
       form.elements["project-name"].value = project.projectName;
       form.elements["project-description"].value = project.description;
-      form.elements["projectID"].value = project.id;
+      form.elements["projectID"].value = project.getID();
     }
   });
 }
@@ -243,7 +244,7 @@ function handleNewTask(project, form) {
   });
 
   project.addTask(task);
-  addProjectToStorage(project.id, project);
+  addProjectToStorage(project.getID(), project);
   addTaskToDOM(task);
 
   resetAddTaskForm();
@@ -326,7 +327,7 @@ function updateExistingProject(formData) {
   const projects = projectsCollection.getProjects();
 
   for (const project of projects) {
-    if (formData.get("projectID") === project.id) {
+    if (formData.get("projectID") === project.getID()) {
       project.projectName = formData.get("project-name");
       project.description = formData.get("project-description");
     }

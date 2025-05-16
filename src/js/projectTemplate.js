@@ -17,9 +17,9 @@ export default function loadProject(id) {
   updateSelectedPage();
 
   for (const project of projects) {
-    if (project.id === id) {
+    if (project.getID() === id) {
       setPageType("project");
-      setProjectID("#content", project.id);
+      setProjectID("#content", project.getID());
       addPageTitleToDOM(project.projectName.toLowerCase());
       addPageDescriptionToDOM(project.description);
       addProjectActionButtonsToDOM();

@@ -9,7 +9,7 @@ export function addAllProjectsToStorage() {
   const projects = projectsCollection.getProjects();
 
   for (const project of projects) {
-    localStorage.setItem(project.id, JSON.stringify(project));
+    localStorage.setItem(project.getID(), JSON.stringify(project));
   }
 }
 

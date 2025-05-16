@@ -8,7 +8,7 @@ export function addTaskToProject(projectID, task) {
   const projects = projectsCollection.getProjects();
 
   projects.forEach((project) => {
-    if (project.id === projectID) {
+    if (project.getID() === projectID) {
       project.addTask(task);
     }
   });

@@ -13,7 +13,7 @@ export const projectsCollection = (function () {
   };
 
   const removeProject = (projectId) => {
-    const index = _projects.findIndex((project) => project.id === projectId);
+    const index = _projects.findIndex((project) => project.getID() === projectId);
     if (index !== -1) {
       _projects.splice(index, 1);
     }
@@ -42,14 +42,14 @@ export function addDefaultProject() {
   });
 
   projectsCollection.addProject(project);
-  addProjectToStorage(project.id, project);
+  addProjectToStorage(project.getID(), project);
 }
 
 export function getProjectName(id) {
   const projects = projectsCollection.getProjects();
 
   for (const project of projects) {
-    if (id === project.id) {
+    if (id === project.getID()) {
       return project.projectName;
     }
   }

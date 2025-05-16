@@ -79,7 +79,7 @@ export function addProjectButtonsToDOM(container) {
     container.insertAdjacentHTML(
       "beforeend",
       `
-      <button class="project-button secondary" data-project-id="${project.id}">${project.projectName}</button>
+      <button class="project-button secondary" data-project-id="${project.getID()}">${project.projectName}</button>
       `
     );
   });
@@ -98,7 +98,7 @@ export function loadProjectsToDropdown() {
   dropdown.insertAdjacentHTML("beforeend", `<option value="">--Please choose an option--</option>`);
 
   for (const project of projects) {
-    dropdown.insertAdjacentHTML("beforeend", `<option value="${project.id}">${project.projectName}</option>`);
+    dropdown.insertAdjacentHTML("beforeend", `<option value="${project.getID()}">${project.projectName}</option>`);
   }
 }
 
