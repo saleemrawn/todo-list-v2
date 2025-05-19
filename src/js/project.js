@@ -40,7 +40,7 @@ export default class Project {
   }
 
   removeTask(taskID) {
-    const index = this.taskList.findIndex((task) => task.taskID === taskID);
+    const index = this.taskList.findIndex((task) => task.getID() === taskID);
     if (index !== -1) {
       this.taskList.splice(index, 1);
     }

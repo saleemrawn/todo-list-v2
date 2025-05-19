@@ -101,13 +101,13 @@ function handleEditTaskEvent(button) {
   projects.forEach((project) => {
     if (project.getID() === projectID) {
       project.getTasks().forEach((task) => {
-        if (task.taskID === taskID) {
+        if (task.getID() === taskID) {
           form.elements["task-name"].value = task.name;
           form.elements["task-description"].value = task.description;
           form.elements["task-due-date"].value = getFormattedDatePicker(task.dueDate);
           form.elements["task-priority"].value = task.priority;
           form.elements["task-project"].value = task.projectID;
-          form.elements["taskID"].value = task.taskID;
+          form.elements["taskID"].value = task.getID();
         }
       });
     }
@@ -150,12 +150,12 @@ function handleAddTaskSubmitEvent(event) {
       handleNewTask(project, formData);
 
     for (const task of project.getTasks()) {
-      if (task.taskID === formData.get("taskID") && project.getID() === formData.get("task-project")) {
+      if (task.getID() === formData.get("taskID") && project.getID() === formData.get("task-project")) {
         updateTaskToCurrentProject(task, formData);
         return;
       }
 
-      if (task.taskID === formData.get("taskID") && project.getID() !== formData.get("task-project")) {
+      if (task.getID() === formData.get("taskID") && project.getID() !== formData.get("task-project")) {
         updateTaskToNewProject(project, task, formData);
         return;
       }
@@ -278,7 +278,7 @@ function handleTaskCheckboxEvent(checkbox) {
 
   for (const project of projects) {
     for (const task of project.getTasks()) {
-      if (task.taskID === taskID) {
+      if (task.getID() === taskID) {
         if (task.completed === false) {
           task.completed = true;
           addProjectToStorage(projectID, project);

@@ -11,7 +11,7 @@ export function addTaskToDOM(task) {
   content.insertAdjacentHTML(
     "beforeend",
     `
-      <div class="task-card" data-task-id="${task.taskID}" data-project-id="${task.projectID}">
+      <div class="task-card" data-task-id="${task.getID()}" data-project-id="${task.projectID}">
         <div class="task-card-details">
             <input type="checkbox" class="task-checkbox" ${task.completed === true ? 'checked="checked"' : ""} />
             <div class="task-card-name-date-container">
