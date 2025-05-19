@@ -13,7 +13,9 @@ export function addTaskToDOM(task) {
     `
       <div class="task-card" data-task-id="${task.getID()}" data-project-id="${task.projectID}">
         <div class="task-card-details">
-            <input type="checkbox" class="task-checkbox" ${task.completed === true ? 'checked="checked"' : ""} />
+            <input type="checkbox" class="task-checkbox" ${
+              task.getCompletedStatus() === true ? 'checked="checked"' : ""
+            } />
             <div class="task-card-name-date-container">
               <p class="task-card-name">${task.getName()}</p>
               <p class="task-card-date ${checkOverdueDate(task.getDueDate())}">${getFormattedDate(

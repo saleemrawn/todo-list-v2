@@ -29,4 +29,8 @@ export default class Task {
   getPriorityLevel() {
     return this.priority;
   }
+
+  getCompletedStatus() {
+    return this.completed;
+  }
 }
