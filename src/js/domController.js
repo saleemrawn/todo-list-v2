@@ -16,7 +16,9 @@ export function addTaskToDOM(task) {
             <input type="checkbox" class="task-checkbox" ${task.completed === true ? 'checked="checked"' : ""} />
             <div class="task-card-name-date-container">
               <p class="task-card-name">${task.getName()}</p>
-              <p class="task-card-date ${checkOverdueDate(task.dueDate)}">${getFormattedDate(task.dueDate)}</p>
+              <p class="task-card-date ${checkOverdueDate(task.getDueDate())}">${getFormattedDate(
+      task.getDueDate()
+    )}</p>
             </div>
             <div class="task-card-priority-pill" data-priority="${task.priority}">
               <p class="task-card-priority">${getPriorityName(task.priority)}</p>

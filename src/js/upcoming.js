@@ -19,7 +19,7 @@ export default function loadUpcoming() {
   sortTasksByDueDateAsc(tasks);
 
   for (const task of tasks) {
-    if (todayDate < task.dueDate) {
+    if (todayDate < task.getDueDate()) {
       addTaskToDOM(task);
     }
   }
