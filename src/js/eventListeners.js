@@ -3,7 +3,7 @@ import Task from "./task.js";
 import loadToday from "./today.js";
 import loadUpcoming from "./upcoming.js";
 import loadProject from "./projectTemplate.js";
-import { projectsCollection, setProjectObjPrototype } from "./projectsCollection.js";
+import { projectsCollection, setProjectObjPrototype, setTaskObjPrototype } from "./projectsCollection.js";
 import {
   addProjectButtonsToDOM,
   addTaskToDOM,
@@ -60,6 +60,7 @@ export function loadApp() {
   window.addEventListener("DOMContentLoaded", () => {
     loadProjectsFromStorage();
     setProjectObjPrototype();
+    setTaskObjPrototype();
     loadToday();
     loadProjectSidebarButtons();
     loadEventListeners();

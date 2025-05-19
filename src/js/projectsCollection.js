@@ -1,4 +1,5 @@
 import Project from "./project.js";
+import Task from "./task.js";
 import { addProjectToStorage } from "./storage.js";
 
 export const projectsCollection = (function () {
@@ -72,6 +73,13 @@ export function setProjectObjPrototype() {
   const projects = projectsCollection.getProjects();
   projects.forEach((project) => {
     Object.setPrototypeOf(project, Project.prototype);
+  });
+}
+
+export function setTaskObjPrototype() {
+  const tasks = getAllTasks();
+  tasks.forEach((task) => {
+    Object.setPrototypeOf(task, Task.prototype);
   });
 }
 
