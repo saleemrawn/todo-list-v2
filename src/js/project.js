@@ -11,6 +11,14 @@ export default class Project {
     return this.id;
   }
 
+  getDescription() {
+    return this.description;
+  }
+
+  getTasks() {
+    return this.taskList;
+  }
+
   addTask(task = {}) {
     if (typeof task !== "object") {
       throw new Error(`Invalid argument: expected type 'object', but received type '${typeof task}'.`);
@@ -24,9 +32,5 @@ export default class Project {
     if (index !== -1) {
       this.taskList.splice(index, 1);
     }
-  }
-
-  getTasks() {
-    return this.taskList;
   }
 }
