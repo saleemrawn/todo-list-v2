@@ -14,6 +14,10 @@ export default class Task {
     return this.taskID;
   }
 
+  getProjectID() {
+    return this.projectID;
+  }
+
   getName() {
     return this.name;
   }
