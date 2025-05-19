@@ -33,4 +33,8 @@ export default class Task {
   getCompletedStatus() {
     return this.completed;
   }
+
+  setCompletedStatus(bool) {
+    this.completed = bool;
+  }
 }

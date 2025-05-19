@@ -280,13 +280,13 @@ function handleTaskCheckboxEvent(checkbox) {
     for (const task of project.getTasks()) {
       if (task.getID() === taskID) {
         if (task.getCompletedStatus() === false) {
-          task.completed = true;
+          task.setCompletedStatus(true);
           addProjectToStorage(projectID, project);
           toggleCheckedAttribute(checkbox);
           return;
         }
 
-        task.completed = false;
+        task.setCompletedStatus(false);
         addProjectToStorage(projectID, project);
         toggleCheckedAttribute(checkbox);
       }
