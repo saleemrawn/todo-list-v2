@@ -25,4 +25,8 @@ export default class Project {
       this.taskList.splice(index, 1);
     }
   }
+
+  getTasks() {
+    return this.taskList;
+  }
 }
