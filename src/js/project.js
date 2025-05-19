@@ -23,6 +23,10 @@ export default class Project {
     return this.description;
   }
 
+  setDescription(description) {
+    this.description = String(description);
+  }
+
   getTasks() {
     return this.taskList;
   }
