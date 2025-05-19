@@ -99,7 +99,7 @@ function handleEditTaskEvent(button) {
 
   projects.forEach((project) => {
     if (project.getID() === projectID) {
-      project.taskList.forEach((task) => {
+      project.getTasks().forEach((task) => {
         if (task.taskID === taskID) {
           form.elements["task-name"].value = task.name;
           form.elements["task-description"].value = task.description;
@@ -148,7 +148,7 @@ function handleAddTaskSubmitEvent(event) {
     if (project.getID() === formData.get("task-project") && formData.get("taskID") === "")
       handleNewTask(project, formData);
 
-    for (const task of project.taskList) {
+    for (const task of project.getTasks()) {
       if (task.taskID === formData.get("taskID") && project.getID() === formData.get("task-project")) {
         updateTaskToCurrentProject(task, formData);
         return;
@@ -276,7 +276,7 @@ function handleTaskCheckboxEvent(checkbox) {
   const taskID = parent.getAttribute("data-task-id");
 
   for (const project of projects) {
-    for (const task of project.taskList) {
+    for (const task of project.getTasks()) {
       if (task.taskID === taskID) {
         if (task.completed === false) {
           task.completed = true;

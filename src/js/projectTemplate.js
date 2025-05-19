@@ -23,8 +23,8 @@ export default function loadProject(id) {
       addPageTitleToDOM(project.projectName.toLowerCase());
       addPageDescriptionToDOM(project.description);
       addProjectActionButtonsToDOM();
-      sortTasksByDueDateAsc(project.taskList);
-      for (const task of project.taskList) {
+      sortTasksByDueDateAsc(project.getTasks());
+      for (const task of project.getTasks()) {
         addTaskToDOM(task);
       }
     }

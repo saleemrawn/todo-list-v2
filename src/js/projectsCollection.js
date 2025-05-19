@@ -60,7 +60,7 @@ export function getAllTasks() {
   const tasks = [];
 
   for (const project of projects) {
-    for (const task of project.taskList) {
+    for (const task of project.getTasks()) {
       tasks.push(task);
     }
   }
