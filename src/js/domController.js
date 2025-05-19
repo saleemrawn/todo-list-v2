@@ -15,7 +15,7 @@ export function addTaskToDOM(task) {
         <div class="task-card-details">
             <input type="checkbox" class="task-checkbox" ${task.completed === true ? 'checked="checked"' : ""} />
             <div class="task-card-name-date-container">
-              <p class="task-card-name">${task.name}</p>
+              <p class="task-card-name">${task.getName()}</p>
               <p class="task-card-date ${checkOverdueDate(task.dueDate)}">${getFormattedDate(task.dueDate)}</p>
             </div>
             <div class="task-card-priority-pill" data-priority="${task.priority}">
@@ -31,7 +31,7 @@ export function addTaskToDOM(task) {
               <div class="task-card-project-pill">
                 <p class="task-card-project">${getProjectName(task.projectID)}</p>
               </div>
-              <p class="task-card-description">${task.description}</p>
+              <p class="task-card-description">${task.getDescription()}</p>
         </div>
       </div>
     `

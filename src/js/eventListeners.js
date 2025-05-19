@@ -102,8 +102,8 @@ function handleEditTaskEvent(button) {
     if (project.getID() === projectID) {
       project.getTasks().forEach((task) => {
         if (task.getID() === taskID) {
-          form.elements["task-name"].value = task.name;
-          form.elements["task-description"].value = task.description;
+          form.elements["task-name"].value = task.getName();
+          form.elements["task-description"].value = task.getDescription();
           form.elements["task-due-date"].value = getFormattedDatePicker(task.dueDate);
           form.elements["task-priority"].value = task.priority;
           form.elements["task-project"].value = task.projectID;

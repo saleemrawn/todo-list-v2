@@ -13,4 +13,12 @@ export default class Task {
   getID() {
     return this.taskID;
   }
+
+  getName() {
+    return this.name;
+  }
+
+  getDescription() {
+    return this.description;
+  }
 }
