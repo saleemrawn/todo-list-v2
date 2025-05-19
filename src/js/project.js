@@ -15,6 +15,10 @@ export default class Project {
     return this.projectName;
   }
 
+  setName(name) {
+    this.projectName = String(name);
+  }
+
   getDescription() {
     return this.description;
   }
