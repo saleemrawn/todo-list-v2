@@ -50,7 +50,7 @@ export function getProjectName(id) {
 
   for (const project of projects) {
     if (id === project.getID()) {
-      return project.projectName;
+      return project.getName();
     }
   }
 }

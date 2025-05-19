@@ -218,7 +218,7 @@ function handleEditProjectEvent() {
 
   projects.forEach((project) => {
     if (project.getID() === projectID) {
-      form.elements["project-name"].value = project.projectName;
+      form.elements["project-name"].value = project.getName();
       form.elements["project-description"].value = project.getDescription();
       form.elements["projectID"].value = project.getID();
     }

@@ -20,7 +20,7 @@ export default function loadProject(id) {
     if (project.getID() === id) {
       setPageType("project");
       setProjectID("#content", project.getID());
-      addPageTitleToDOM(project.projectName.toLowerCase());
+      addPageTitleToDOM(project.getName().toLowerCase());
       addPageDescriptionToDOM(project.getDescription());
       addProjectActionButtonsToDOM();
       sortTasksByDueDateAsc(project.getTasks());
