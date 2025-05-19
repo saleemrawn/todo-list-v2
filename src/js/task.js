@@ -25,4 +25,8 @@ export default class Task {
   getDueDate() {
     return this.dueDate;
   }
+
+  getPriorityLevel() {
+    return this.priority;
+  }
 }

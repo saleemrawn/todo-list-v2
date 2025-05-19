@@ -105,7 +105,7 @@ function handleEditTaskEvent(button) {
           form.elements["task-name"].value = task.getName();
           form.elements["task-description"].value = task.getDescription();
           form.elements["task-due-date"].value = getFormattedDatePicker(task.getDueDate());
-          form.elements["task-priority"].value = task.priority;
+          form.elements["task-priority"].value = task.getPriorityLevel();
           form.elements["task-project"].value = task.projectID;
           form.elements["taskID"].value = task.getID();
         }

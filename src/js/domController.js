@@ -20,8 +20,8 @@ export function addTaskToDOM(task) {
       task.getDueDate()
     )}</p>
             </div>
-            <div class="task-card-priority-pill" data-priority="${task.priority}">
-              <p class="task-card-priority">${getPriorityName(task.priority)}</p>
+            <div class="task-card-priority-pill" data-priority="${task.getPriorityLevel()}">
+              <p class="task-card-priority">${getPriorityName(task.getPriorityLevel())}</p>
             </div>
             <div class="task-card-action-buttons">
               <button class="task-edit-button icon-only" title="Edit task"><span class="hide">Edit task</span></button>
