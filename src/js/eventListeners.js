@@ -329,7 +329,7 @@ function updateExistingProject(formData) {
   for (const project of projects) {
     if (formData.get("projectID") === project.getID()) {
       project.setName(formData.get("project-name"));
-      project.description = formData.get("project-description");
+      project.setDescription(formData.get("project-description"));
     }
   }
 
