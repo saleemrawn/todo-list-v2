@@ -11,6 +11,10 @@ export default class Project {
     return this.id;
   }
 
+  getName() {
+    return this.projectName;
+  }
+
   getDescription() {
     return this.description;
   }
