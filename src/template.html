@@ -35,8 +35,8 @@
     <dialog class="project-dialog">
       <form class="project-form">
         <div class="form-row project-form-name-container">
-          <label for="project-name">Project name</label>
-          <input type="text" id="project-name" name="project-name" />
+          <label for="project-name">Project name<span aria-label="required">*</span></label>
+          <input type="text" id="project-name" name="project-name" required />
         </div>
         <div class="form-row project-description-container">
           <label for="project-description">Description</label>
@@ -53,8 +53,8 @@
     <dialog class="task-dialog">
       <form id="task-form" class="task-form">
         <div class="form-row task-name-container">
-          <label for="task-name">Task name</label>
-          <input type="text" id="task-name" name="task-name" />
+          <label for="task-name">Task name<span aria-label="required">*</span></label>
+          <input type="text" id="task-name" name="task-name" required />
         </div>
         <div class="form-row task-description-container">
           <label for="task-description">Description</label>
@@ -73,8 +73,8 @@
           </select>
         </div>
         <div class="form-row task-project-container">
-          <label for="task-project">Project</label>
-          <select name="task-project" id="task-project"></select>
+          <label for="task-project">Project<span aria-label="required">*</span></label>
+          <select name="task-project" id="task-project" required></select>
         </div>
         <div class="form-buttons-container">
           <button type="button" class="task-cancel-button" formmethod="dialog">Cancel</button>
