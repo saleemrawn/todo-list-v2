@@ -22,6 +22,9 @@
   --zinc-900: #18181b;
   --zinc-950: #0e0e11;
 
+  --error-red: #d50000;
+  --error-light-red: #ffebee;
+
   --text-font-family: "Nunito", Helvetica, Arial, sans-serif, system-ui;
   --text-colour: var(--ziggurat-950);
   --text-muted-colour: var(--zinc-500);
