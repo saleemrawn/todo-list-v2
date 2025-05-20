@@ -82,6 +82,13 @@ input[type="text"]:focus-visible {
   border: 1px solid var(--ziggurat-600);
 }
 
+input:invalid,
+input:user-invalid,
+select:user-invalid {
+  border: 1px solid var(--error-red);
+  background-color: var(--error-light-red);
+}
+
 select,
 option {
   font-family: inherit;
