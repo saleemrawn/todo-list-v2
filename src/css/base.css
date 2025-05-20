@@ -61,7 +61,8 @@ ul li {
 }
 
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+select {
   border-radius: var(--border-radius-24);
   border: 0.071rem solid var(--border-colour);
 }
@@ -95,12 +96,10 @@ option {
 }
 
 select {
-  border: none;
   min-height: 2.286rem;
   padding: 0.429rem 0.857rem;
   font-family: inherit;
-  background-color: var(--ziggurat-200);
-  border-radius: var(--border-radius-24);
+  background-color: #ffffff;
 }
 
 select:hover {
