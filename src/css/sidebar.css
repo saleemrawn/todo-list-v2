@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto 1fr;
   background-color: var(--ziggurat-50);
-  padding: 24px;
+  padding: 1.714rem;
 }
 
 .sidebar-container button {
@@ -12,14 +12,14 @@
 }
 
 .logo h1 {
-  font-size: 24px;
+  font-size: 1.714rem;
   margin-bottom: 0;
   font-weight: 900;
 }
 
 .logo {
   color: #4dd3d7;
-  margin-bottom: 24px;
+  margin-bottom: 1.714rem;
 }
 
 .logo-to {
@@ -31,16 +31,16 @@
 }
 
 .add-task-container {
-  padding-bottom: 4px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid var(--ziggurat-300);
+  padding-bottom: 0.286rem;
+  margin-bottom: 0.286rem;
+  border-bottom: 0.071rem solid var(--ziggurat-300);
 }
 
 .timeline-controls-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
-  margin-bottom: 24px;
+  margin-bottom: 1.714rem;
 }
 
 .my-projects-title {
@@ -48,7 +48,7 @@
 }
 
 .my-project-buttons {
-  padding-top: 4px;
-  margin-top: 4px;
-  border-top: 1px solid var(--ziggurat-300);
+  padding-top: 0.286rem;
+  margin-top: 0.286rem;
+  border-top: 0.071rem solid var(--ziggurat-300);
 }

@@ -3,13 +3,13 @@
 }
 
 .project-action-buttons button {
-  height: 40px;
-  width: 40px;
+  height: 2.857rem;
+  width: 2.857rem;
   padding: 0;
   text-align: center;
 }
 
 .project-action-buttons i {
-  font-size: 16px;
+  font-size: 1.143rem;
   margin: 0;
 }

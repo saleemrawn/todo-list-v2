@@ -4,28 +4,28 @@ html {
 }
 
 body {
-  gap: 40px;
+  gap: 2.857rem;
   margin: 0;
   display: grid;
   grid-template-rows: 100vh;
   background-color: #ebf2f3;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 14.286rem 1fr;
   font-family: var(--text-font-family);
 }
 
 main {
-  padding: 24px 0;
+  padding: 1.714rem 0;
 }
 
 #content {
   display: grid;
-  margin-right: 40px;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
+  margin-right: 2.857rem;
+  margin-bottom: 1.143rem;
+  padding-bottom: 1.143rem;
   justify-content: center;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  border-bottom: 1px solid var(--ziggurat-300);
+  border-bottom: 0.071rem solid var(--ziggurat-300);
 }
 
 h1,
@@ -48,7 +48,7 @@ p {
 }
 
 p {
-  margin-bottom: 8px;
+  margin-bottom: 0.571rem;
 }
 
 ul {
@@ -63,15 +63,15 @@ ul li {
 input[type="text"],
 input[type="date"] {
   border-radius: var(--border-radius-24);
-  border: 1px solid var(--border-colour);
+  border: 0.071rem solid var(--border-colour);
 }
 
 input[type="text"] {
-  padding: 6px 16px;
+  padding: 0.429rem 1.143rem;
 }
 
 input[type="date"] {
-  padding: 6px 8px;
+  padding: 0.429rem 0.571rem;
   font-family: inherit;
 }
 
@@ -79,13 +79,13 @@ input[type="text"]:focus,
 input[type="text"]:focus-visible {
   outline: none;
   background-color: var(--ziggurat-50);
-  border: 1px solid var(--ziggurat-600);
+  border: 0.071rem solid var(--ziggurat-600);
 }
 
 input:invalid,
 input:user-invalid,
 select:user-invalid {
-  border: 1px solid var(--error-red);
+  border: 0.071rem solid var(--error-red);
   background-color: var(--error-light-red);
 }
 
@@ -96,8 +96,8 @@ option {
 
 select {
   border: none;
-  min-height: 32px;
-  padding: 6px 12px;
+  min-height: 2.286rem;
+  padding: 0.429rem 0.857rem;
   font-family: inherit;
   background-color: var(--ziggurat-200);
   border-radius: var(--border-radius-24);
@@ -109,17 +109,17 @@ select:hover {
 
 dialog {
   border: none;
-  padding: 40px;
-  border-radius: 24px;
+  padding: 2.857rem;
+  border-radius: 1.714rem;
 }
 
 .page-title-container {
   display: grid;
-  margin-bottom: 16px;
+  margin-bottom: 1.143rem;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
 }
 
 .page-title {
-  margin-bottom: 8px;
+  margin-bottom: 0.571rem;
 }

@@ -60,12 +60,12 @@
   --border-colour: var(--zinc-300);
   --subtle-border-colour: var(--zinc-200);
 
-  --border-radius-24: 24px;
-  --border-radius-40: 40px;
-  --border-radius-100: 100px;
+  --border-radius-24: 1.714rem;
+  --border-radius-40: 2.857rem;
+  --border-radius-100: 7.143rem;
 
-  --container-background: 0 0 0 1px var(--subtle-border-colour), 0 10px 15px -3px rgba(0, 0, 0, 0.05),
-    0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --container-background: 0 0 0 0.071rem var(--subtle-border-colour), 0 0.714rem 1.071rem -0.214rem rgba(0, 0, 0, 0.05),
+    0 0.286rem 0.429rem -0.286rem rgba(0, 0, 0, 0.05);
 
   --low-priority-colour: #c5e1a5;
   --med-priority-colour: #ffb74d;

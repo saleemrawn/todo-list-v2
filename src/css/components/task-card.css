@@ -4,10 +4,10 @@
   align-items: center;
   grid-template-rows: 1fr auto;
   grid-template-columns: 1fr;
-  margin-bottom: 8px;
-  padding-top: 16px;
+  margin-bottom: 0.571rem;
+  padding-top: 1.143rem;
   background-color: var(--ziggurat-50);
-  border-radius: 16px;
+  border-radius: 1.143rem;
 }
 
 .task-card:hover {
@@ -23,60 +23,60 @@
   pointer-events: none;
   display: grid;
   align-items: center;
-  gap: 16px;
+  gap: 1.143rem;
   grid-template-rows: 1fr;
-  grid-template-columns: auto 1fr 120px auto;
-  padding: 0 24px;
+  grid-template-columns: auto 1fr 8.571rem auto;
+  padding: 0 1.714rem;
 }
 
 .task-card-content {
   pointer-events: none;
   display: grid;
   align-items: center;
-  gap: 16px;
+  gap: 1.143rem;
   grid-template-rows: 1fr;
   grid-template-columns: auto 1fr;
   overflow: hidden;
   max-height: 0;
-  padding: 16px 24px 0 24px;
+  padding: 1.143rem 1.714rem 0 1.714rem;
   transition: max-height 0.15s ease-out, margin-bottom 0.15s ease-out;
 }
 
 .task-card-name-date-container {
   display: grid;
-  gap: 4px;
+  gap: 0.286rem;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
 }
 
 .task-card-action-buttons {
   display: grid;
-  gap: 8px;
+  gap: 0.571rem;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
   pointer-events: auto;
 }
 
 .task-card-date {
-  font-size: 12px;
+  font-size: 0.857rem;
   color: var(--ziggurat-800);
 }
 
 .task-card-project-pill,
 .task-card-priority-pill {
-  padding: 2px 12px;
-  border-radius: 100px;
+  padding: 0.143rem 0.857rem;
+  border-radius: 7.143rem;
   text-align: center;
 }
 
 .task-card-project-pill {
   background-color: var(--ziggurat-100);
-  border: 1px solid var(--ziggurat-400);
-  font-size: 12px;
+  border: 0.071rem solid var(--ziggurat-400);
+  font-size: 0.857rem;
 }
 
 .task-card-priority-pill {
-  max-width: 60px;
+  max-width: 4.286rem;
   font-weight: var(--font-weight-semibold);
 }
 
@@ -100,5 +100,5 @@
 .overdue::before {
   content: "\f1da";
   font-family: var(--icon-font-family);
-  margin-right: 6px;
+  margin-right: 0.429rem;
 }

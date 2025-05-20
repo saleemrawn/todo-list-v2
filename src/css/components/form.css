@@ -1,8 +1,8 @@
 form {
-  gap: 16px;
+  gap: 1.143rem;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: minmax(320px, 768px);
+  grid-template-columns: minmax(22.857rem, 54.857rem);
 }
 
 label {
@@ -10,16 +10,16 @@ label {
 }
 
 .form-row {
-  gap: 4px;
+  gap: 0.286rem;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
 }
 
 .form-buttons-container {
-  gap: 8px;
+  gap: 0.571rem;
   display: grid;
-  margin-top: 8px;
+  margin-top: 0.571rem;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
 }

@@ -163,7 +163,7 @@ export function closeDialog(selector) {
 
 export function expandTaskCard(element) {
   element.style.maxHeight = element.scrollHeight + "px";
-  element.style.marginBottom = "16px";
+  element.style.marginBottom = "1.143rem";
 }
 
 export function collapseTaskCard(element) {
